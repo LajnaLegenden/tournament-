@@ -1,15 +1,22 @@
 footer {
-    background-color: deepskyblue;
-    position: relative;
+    background-color: #524500;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
+    color: #FDE8C4;
 }
 
 .footer-copyright {
-    background-color: rgb(4, 127, 168);
+    background-color: #4A3E00;
+    height: 3%;
 }
 
 .col-md-6 {
     text-align: center;
+}
+
+.discord {
+    color: #FDE8C4;
+    text-decoration: none;
 }

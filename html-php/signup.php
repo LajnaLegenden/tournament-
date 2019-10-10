@@ -18,26 +18,28 @@
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-            <a class="loginbtn" href="login.php">Login</a>
+                <a class="loginbtn" href="login.php">Login</a>
                 <a class="loginbtn" href="signup.php">Sign Up</a>
             </div>
         </nav>
     </header>
 
-    <form method="POST">
-        <input  class="signin" type="name" name="förnamn" placeholder="First name...">
-        <input class="signin"type="name" name="efternamn" placeholder="Last name...">
-        <input class="signin"type="name" name="username" placeholder="Username...">
-        <input class="signin"type="email" name="email" placeholder="Email...">
-        <input class="signin" type="password" name="password" placeholder="password...">
-        <input class="signin"type="password" name="conformpassword" placeholder="Conform password...">
-        <select id="conto-select">
-            <option value="">--Please choose account type option--</option>
-            <option value="captin">clan captin</option>
-            <option value="player">clan player</option>
-        </select>
-        <input class="signin Btn" type="submit" value="signup" id="signup">
-    </form>
+    <div class="loging">
+        <form method="POST" class="login">
+            <input class="signin" type="name" name="förnamn" placeholder="First name...">
+            <input class="signin" type="name" name="efternamn" placeholder="Last name...">
+            <input class="signin" type="name" name="username" placeholder="Username...">
+            <input class="signin" type="email" name="email" placeholder="Email...">
+            <input class="signin" type="password" name="password" placeholder="password...">
+            <input class="signin" type="password" name="conformpassword" placeholder="Conform password...">
+            <select id="conto-select">
+                <option value="">--Please choose account type option--</option>
+                <option value="captin">clan captin</option>
+                <option value="player">clan player</option>
+            </select>
+            <input class="signin Btn" type="submit" value="signup" id="signup">
+        </form>
+    </div>
     <?php
 
 
@@ -59,8 +61,11 @@
 
                     <!-- Content -->
                     <h5 class="text-uppercase font-weight-bold">admininfo</h5>
-                    <p>Oliver Jam - DAT BOI#9599</p>
-                    <p>Mohammed Ali Al-Hilo - Ali.M #3531</p>
+                    <p>Oliver Jam - <a href="
+                        https://discordapp.com/users/176736575302926336" class="discord">DAT BOI#9599</a></p>
+                    <p>Mohammed Ali Al-Hilo -
+                        <a href="
+                    https://discordapp.com/users/246718596556783617" class="discord"> Ali.M #3531</a></p>
 
                 </div>
                 <!-- Grid column -->
@@ -86,7 +91,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-            <p>©</p>
+            <p>©Copyrighted by: Akkadian E-sport 2019</p>
         </div>
         <!-- Copyright -->
 

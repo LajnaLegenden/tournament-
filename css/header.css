@@ -9,9 +9,9 @@
 .loginbtn {
     padding: 3%;
     margin-left: 1%;
-    border: solid;
+    border: 1px solid white;
     border-radius: 25%;
-    background: #F2B705;
+    background: #D18B30;
     color: white;
     text-decoration: none;
 }
@@ -20,6 +20,7 @@
     background: #F2E205;
     color: black;
     border-radius: 40%;
+    border: solid black;
 }
 
 a:active {
@@ -27,7 +28,7 @@ a:active {
 }
 
 header {
-    background: #fff;
+    background: #D4A839;
 }
 
 #logo {
