@@ -6,7 +6,7 @@
     margin-top: 2%;
 }
 
-.login {
+.loginbtn {
     padding: 3%;
     margin-left: 1%;
     border: solid;
@@ -16,7 +16,7 @@
     text-decoration: none;
 }
 
-.login:hover {
+.loginbtn:hover {
     background: #F2E205;
     color: black;
     border-radius: 40%;

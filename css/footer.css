@@ -1,3 +1,15 @@
 footer {
     background-color: deepskyblue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer-copyright {
+    background-color: rgb(4, 127, 168);
+}
+
+.col-md-6 {
+    text-align: center;
 }
