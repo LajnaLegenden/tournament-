@@ -6,7 +6,7 @@
     margin-top: 2%;
 }
 
-a {
+.login {
     padding: 3%;
     margin-left: 1%;
     border: solid;
@@ -16,7 +16,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+.login:hover {
     background: #F2E205;
     color: black;
     border-radius: 40%;
