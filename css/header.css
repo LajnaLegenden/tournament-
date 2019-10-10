@@ -1,5 +1,25 @@
 #log {
     float: right;
+    padding: auto;
+    width: 10%;
+    height: 100%;
+    margin-top: 2%;
+}
+
+a {
+    padding: 3%;
+    margin-left: 1%;
+    border: solid;
+    border-radius: 25%;
+    background: #F2B705;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    background: #F2E205;
+    color: black;
+    border-radius: 40%;
 }
 
 header {

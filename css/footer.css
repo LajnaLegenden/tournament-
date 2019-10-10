@@ -1,0 +1,21 @@
+td {
+    padding-left: 0.5rem;
+}
+
+#copyright {
+    margin: auto;
+}
+
+#kontaktinfo {
+    float: right;
+}
+
+footer {
+    height: 19vh;
+    background-color: grey;
+}
+
+#admininfo {
+    max-width: 50%;
+    margin-top: 50%;
+}
