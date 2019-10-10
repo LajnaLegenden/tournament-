@@ -8,30 +8,81 @@
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>Document</title>
 </head>
 
-<body>
+<body class="body">
     <header>
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a href="login.php">Login</a>
-                <a href="signup.php">Sign Up</a>
+                <a class="loginbtn" href="login.php">Login</a>
+                <a class="loginbtn" href="signup.php">Sign Up</a>
             </div>
         </nav>
     </header>
     <div class="loging">
         <form method="POST" class="login">
-            <input type="name" name="username" placeholder="Username...">
-            <input type="password" name="password">
-            <input type="submit" value="Login" id="loginBtn">
+            <input class="signin Btn" type="name" name="username" placeholder="Username...">
+            <input class="signin Btn" type="password" name="password">
+            <input class="signin Btn" type="submit" value="Login" id="loginBtn">
         </form>
     </div>
     <?php
 
 
     ?>
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small teal pt-4">
+
+        <!-- Footer Text -->
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mt-md-0 mt-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase font-weight-bold">admininfo</h5>
+                    <p>Oliver Jam - DAT BOI#9599</p>
+                    <p>Mohammed Ali Al-Hilo - Ali.M #3531</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mb-md-0 mb-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase font-weight-bold">Contact</h5>
+                    <p>oliver.jam@elev.ga.ntig.se</p>
+                    <p>mohammedali.al-hilo@elev.ga.ntig.se</p>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Text -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            <p>©</p>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
     <script src="../js/header.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/footer.js"></script>

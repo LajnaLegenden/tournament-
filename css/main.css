@@ -15,7 +15,7 @@
     top: 50%;
 }
 
-input {
+.signin {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -25,21 +25,21 @@ input {
     /*box-sizing: border-box;*/
 }
 
-input[type=submit] {
+.Btn {
     background: #BF9663;
     color: #FFD67F;
     border: #FFD67F;
     box-shadow: 1px 1px grey;
 }
 
-input[type=submit]:hover {
+.Btn:hover {
     background: #FFD67F;
     color: #BF9663;
     border: #BF9663;
     box-shadow: 3px 3px grey;
 }
 
-input:hover {
+.signin:hover {
     box-shadow: 3px 3px grey;
 }
 
