@@ -22,6 +22,10 @@ a:hover {
     border-radius: 40%;
 }
 
+a:active {
+    background: #F2E852;
+}
+
 header {
     background: #fff;
 }

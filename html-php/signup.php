@@ -34,7 +34,7 @@
             <option value="captin">clan captin</option>
             <option value="player">clan player</option>
         </select>
-        <input type="submit" value="Login" id="loginBtn">
+        <input type="submit" value="signup" id="signup">
     </form>
     <?php
 

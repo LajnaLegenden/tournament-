@@ -21,14 +21,15 @@
             </div>
         </nav>
     </header>
-
-    <form method="POST">
-        <input type="name" name="username" placeholder="Username...">
-        <input type="password" name="password">
-        <input type="submit" value="Login" id="loginBtn">
-    </form>
+    <div class="loging">
+        <form method="POST" class="login">
+            <input type="name" name="username" placeholder="Username...">
+            <input type="password" name="password">
+            <input type="submit" value="Login" id="loginBtn">
+        </form>
+    </div>
     <?php
-        
+
 
     ?>
     <script src="../js/header.js"></script>

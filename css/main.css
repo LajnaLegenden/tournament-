@@ -1,3 +1,53 @@
 body {
     background-color: #8C6A03;
+    height: 100vh;
+}
+
+.loging {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.login {
+    position: relative;
+    top: 50%;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: table;
+    margin: auto;
+    margin-top: 4%;
+    /*box-sizing: border-box;*/
+}
+
+input[type=submit] {
+    background: #BF9663;
+    color: #FFD67F;
+    border: #FFD67F;
+    box-shadow: 1px 1px grey;
+}
+
+input[type=submit]:hover {
+    background: #FFD67F;
+    color: #BF9663;
+    border: #BF9663;
+    box-shadow: 3px 3px grey;
+}
+
+input:hover {
+    box-shadow: 3px 3px grey;
+}
+
+#conto-select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: table;
+    margin: auto;
+    margin-top: 4%;
 }
