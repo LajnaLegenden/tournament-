@@ -9,7 +9,9 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Home</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/solid.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/fontawesome.css">
+    <title>clan</title>
 </head>
 
 <body class="body">
@@ -17,12 +19,13 @@
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a class="" href=""></a>
-                <a class="" href=""></a>
+                <a class="loginbtn" href=""><i class="fas fa-user"></i>User</a>
+                <a class="loginbtn" href=""></a>
             </div>
 
         </nav>
     </header>
+
 
     <?php
 
