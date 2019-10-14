@@ -9,8 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Document</title>
+    <title>Home</title>
 </head>
 
 <body class="body">
@@ -18,23 +17,20 @@
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a class="loginbtn" href="login.php">Login</a>
-                <a class="loginbtn" href="signup.php">Sign Up</a>
+                <a class="" href=""></a>
+                <a class="" href=""></a>
             </div>
+
         </nav>
     </header>
-    <div class="loging">
-        <form method="POST" class="login">
-            <input class="signin" type="name" name="username" placeholder="Username...">
-            <input class="signin" type="password" name="password" placeholder="password...">
-            <input class="signin Btn" type="submit" value="Login" id="loginBtn">
-        </form>
-    </div>
+
     <?php
 
-
+    
     ?>
 
+
+    <!--https://color.adobe.com/sv/search?q=tournament-->
 
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
@@ -64,12 +60,12 @@
                 <!-- Grid column -->
                 <div class="col-md-6 mb-md-0 mb-3">
 
-<!-- Content -->
-<h5 class="text-uppercase font-weight-bold">Contact</h5>
-<p>oliver.jam@elev.ga.ntig.se</p>
-<p>mohammedali.al-hilo@elev.ga.ntig.se</p>
+                    <!-- Content -->
+                    <h5 class="text-uppercase font-weight-bold">Contact</h5>
+                    <p>oliver.jam@elev.ga.ntig.se</p>
+                    <p>mohammedali.al-hilo@elev.ga.ntig.se</p>
 
-</div>
+                </div>
                 <!-- Grid column -->
 
             </div>
@@ -86,6 +82,7 @@
 
     </footer>
     <!-- Footer -->
+
     <script src="../js/header.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/footer.js"></script>
