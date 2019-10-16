@@ -51,3 +51,15 @@
     margin: auto;
     margin-top: 4%;
 }
+
+#profilPicDiv {
+    width: 50%;
+    height: 500px;
+}
+
+#profilDescription {
+    width: 50%;
+    height: 500px;
+    float: right;
+    margin-top: -500px;
+}
