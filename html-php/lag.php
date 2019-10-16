@@ -19,13 +19,27 @@
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a class="loginbtn" href=""><i class="fas fa-user"></i>User</a>
-                <a class="loginbtn" href=""></a>
+                <a class="loginbtn" href="Profil.php"><i class="fas fa-user"></i>User</a>
+                <a class="loginbtn" href="">Tournament</a>
             </div>
 
         </nav>
     </header>
-
+    <div class="laglogo">
+        <img src="" alt="This is a placeholder">
+    </div>
+    <h1 class="lagnamn"></h1>
+    <div class="lagspelare">
+        <ul>
+            <li class="lagcaptin"></li>
+            <li class="lagplayer"></li>
+            <li class="lagplayer"></li>
+            <li class="lagplayer"></li>
+            <li class="lagplayer"></li>
+        </ul>
+    </div>
+    <div class="lagstatistic"></div>
+    
 
     <?php
 

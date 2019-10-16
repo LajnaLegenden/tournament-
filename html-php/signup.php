@@ -41,8 +41,37 @@
         </form>
     </div>
     <?php
+    $link = mysqli_connect("localhost", "root", "", "tournament");
+
+    // kolla ifall det gick bra eller åt helsike
+    if ($link === false) {
+        echo "Oh shit, something is wrong....";
+        exit();
+    } else
+        echo "Oh, nice, we own the database now.<br>";
+
+    if (!isset($_POST['förnamn']) || !isset($_POST['efternamn']) || !isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['conformpassword'])) {
+        echo "Need more data to signup";
+        exit();
+    }
+
+    /*if ($_POST('password') !== $_POST('conformpassword')){
+        echo "not password is not matching";
+        exit();
+    }*/
+
+    $firstname = $_POST['förnamn'];
+    $lastname = $_POST['efternamn'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
 
+    $sql = "INSERT INTO spelare (firstname, lastname, username, email, pass) VALUES ('$firstname', '$lastname', '$username', '$email', '$password') ";
+
+    if(mysqli_query($link, $sql))
+        echo "<br>Info added";
+  
     ?>
 
 
