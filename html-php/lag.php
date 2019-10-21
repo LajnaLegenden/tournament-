@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/solid.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/fontawesome.css">
     <title>Lag</title>
 </head>
 
@@ -17,12 +19,27 @@
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a class="" href=""></a>
-                <a class="" href=""></a>
+                <a class="loginbtn" href="Profil.php"><i class="fas fa-user"></i>User</a>
+                <a class="loginbtn" href="">Tournament</a>
             </div>
 
         </nav>
     </header>
+    <div class="laglogo">
+        <img src="" alt="This is a placeholder">
+    </div>
+    <h1 class="lagnamn"></h1>
+    <div class="lagspelare">
+        <ul>
+            <li class="lagcaptin"></li>
+            <li class="lagplayer"></li>
+            <li class="lagplayer"></li>
+            <li class="lagplayer"></li>
+            <li class="lagplayer"></li>
+        </ul>
+    </div>
+    <div class="lagstatistic"></div>
+    
 
     <?php
 

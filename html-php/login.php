@@ -25,12 +25,21 @@
     </header>
     <div class="loging">
         <form method="POST" class="login">
-            <input class="signin" type="name" name="username" placeholder="Username...">
-            <input class="signin" type="password" name="password" placeholder="password...">
+            <input class="signin" type="name" name="username" placeholder="Username..." required>
+            <input class="signin" type="password" name="password" placeholder="password..." required>
             <input class="signin Btn" type="submit" value="Login" id="loginBtn">
         </form>
     </div>
     <?php
+
+    $link = mysqli_connect("localhost", "root", "", "tournament");
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+
+    $sql = "SELECT id, username, pass FROM spelare WHERE username = ?";
+
 
 
     ?>
@@ -64,12 +73,12 @@
                 <!-- Grid column -->
                 <div class="col-md-6 mb-md-0 mb-3">
 
-<!-- Content -->
-<h5 class="text-uppercase font-weight-bold">Contact</h5>
-<p>oliver.jam@elev.ga.ntig.se</p>
-<p>mohammedali.al-hilo@elev.ga.ntig.se</p>
+                    <!-- Content -->
+                    <h5 class="text-uppercase font-weight-bold">Contact</h5>
+                    <p>oliver.jam@elev.ga.ntig.se</p>
+                    <p>mohammedali.al-hilo@elev.ga.ntig.se</p>
 
-</div>
+                </div>
                 <!-- Grid column -->
 
             </div>

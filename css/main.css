@@ -52,6 +52,21 @@
     margin-top: 4%;
 }
 
+.laglogo {
+    float: left;
+    justify-content: center;
+}
+
+.lagspelare {
+    flex: auto;
+    justify-content: center;
+}
+
+.lagstatistic {
+    justify-content: center;
+    flex: right;
+}
+
 #profilPicDiv {
     width: 50%;
     height: 500px;

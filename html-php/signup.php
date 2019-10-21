@@ -26,12 +26,12 @@
 
     <div class="loging">
         <form method="POST" class="login">
-            <input class="signin" type="name" name="förnamn" placeholder="First name...">
-            <input class="signin" type="name" name="efternamn" placeholder="Last name...">
-            <input class="signin" type="name" name="username" placeholder="Username...">
-            <input class="signin" type="email" name="email" placeholder="Email...">
-            <input class="signin" type="password" name="password" placeholder="password...">
-            <input class="signin" type="password" name="conformpassword" placeholder="Conform password...">
+            <input class="signin" type="name" name="förnamn" placeholder="First name..." required>
+            <input class="signin" type="name" name="efternamn" placeholder="Last name..." required>
+            <input class="signin" type="name" name="username" placeholder="Username..." required>
+            <input class="signin" type="email" name="email" placeholder="Email..." required>
+            <input class="signin" type="password" name="password" placeholder="password..." required>
+            <input class="signin" type="password" name="confirmpassword" placeholder="Confirm password..." required>
             <select id="conto-select">
                 <option value="">--Please choose account type option--</option>
                 <option value="captin">clan captin</option>
@@ -41,7 +41,29 @@
         </form>
     </div>
     <?php
+    $link = mysqli_connect("localhost", "root", "", "tournament");
 
+    $firstname = $_POST['förnamn'];
+    $lastname = $_POST['efternamn'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirmpassword'];
+
+
+    if (empty($firstname) || empty($lastname) || empty($username) || empty($email) || empty($password) || empty($confirm_password)) {
+        echo "please write your information";
+    } else {
+        if ($password != $confirm_password) {
+            echo "Password did not match";
+            exit();
+        } else $sql = "INSERT INTO spelare (firstname, lastname, username, email, pass) VALUES ('$firstname', '$lastname', '$username', '$email', '$password') ";
+
+        if (mysqli_query($link, $sql)) {
+            echo "<br>Info added";
+            echo "<br>You can login by clicking the login button!";
+        }
+    }
 
     ?>
 
