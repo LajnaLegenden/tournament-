@@ -83,3 +83,11 @@
 /*#picChooser {
     margin: auto;
 }*/
+
+#welcomeH1 {
+    align-self: center;
+}
+
+#indexTextDiv {
+    justify-content: center;
+}
