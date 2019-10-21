@@ -43,39 +43,16 @@
 
     foreach ($response as $row) {
 
-        echo "<div id='profilPicDiv'>" . "<img id='profilPic' src=''>" . "</div>";
+        echo "<div id='profilPicDiv'>" . "<input id='picChooser' . type='file' . name='picChooser'>" . "<img id='profilPic' src=''>" . "</div>";
 
         echo "<div id='profilDescription'>" . "<h1 id='headerDescription'>" . $row['username'] . "</h1>" . "<p>" .$row["firstname"] . " " . $row["lastname"] . " ". $row["email"]."</p>" . "</div>";
     
     }
-
-    /*
-    $link = mysqli_connect("localhost", "root", "", "spelare");
-
-    if ($link === false)
-    {
-        echo "Oh shit, something is wrong...";
-        exit();
-    }
-
-    else
-        echo "Oh, nice, we own the database now. <br>";
-
-    if(!isset($_GET['firstname']) || !isset($_GET['lastname']))
-        {
-            echo "Need more data in order to add an author";
-            exit();
-        }
-
-    $firstname = $_GET['firstname'];
-    $lastname = $_GET['lastname'];
-
-    if($firstname == "" || $lastname=="")
-    {
-        echo "Noname authors (firstname, lastname) VALUES ('$firstname', '$lastname')";
-    }*/
     ?>
     <!--https://color.adobe.com/sv/search?q=tournament-->
+
+
+    
 
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
