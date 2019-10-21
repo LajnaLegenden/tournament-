@@ -84,10 +84,21 @@
     margin: auto;
 }*/
 
-#welcomeH1 {
-    align-self: center;
+#welcomeP {
+    font-weight: 100;
+    font-size: 3.5rem;
 }
 
 #indexTextDiv {
-    justify-content: center;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+#ldpDescription {
+    font-weight: 100;
+    font-size: 1.5rem;
+}
+
+#divDescription {
+    text-align: center;
 }
