@@ -26,26 +26,31 @@
         </nav>
     </header>
     <div class="laglogo">
-        <img src="" alt="This is a placeholder">
+        <img src="" alt="">
     </div>
     <h1 class="lagnamn"></h1>
-    <div class="lagspelare">
-        <ul>
-            <li class="lagcaptin"></li>
-            <li class="lagplayer"></li>
-            <li class="lagplayer"></li>
-            <li class="lagplayer"></li>
-            <li class="lagplayer"></li>
-        </ul>
-    </div>
     <div class="lagstatistic"></div>
     
 
     <?php
 
-    
-    ?>
+    $link = mysqli_connect("localhost", "root", "", "tournament");
 
+    $sql = "SELECT spelare.username FROM spelare, koppling, lag WHERE spelarID = koppling.spelarID AND koppling.lagID = lag.ID";
+
+    $response = mysqli_query($link, $sql);
+
+    foreach ($response as $row) {
+
+        echo "<div class='laglogo'>" ."<img src='' alt=''>" . "</div>";
+        echo "<h1 class='lagnamn'>" . "</h1>";
+        echo "<div class='lagspelare'>" . "<ul>" . "<li class='lagcaptin>" . 'C ' . $row['username'] . "</li>" . "</ul>" . "</div>";
+        
+    
+    }
+
+    ?>
+ <!--echo "<li class='lagplayer>" . $row['username'] . "</li>" ." ";*/ -->
 
     <!--https://color.adobe.com/sv/search?q=tournament-->
 
