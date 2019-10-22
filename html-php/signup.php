@@ -26,39 +26,39 @@
 
     <div class="loging">
         <form method="POST" class="login">
-            <input class="signin" type="name" name="firstname" placeholder="First name..." >
-            <input class="signin" type="name" name="efternamn" placeholder="Last name..." >
-            <input class="signin" type="name" name="username" placeholder="Username..." >
-            <input class="signin" type="email" name="email" placeholder="Email..." >
-            <input class="signin" type="password" name="password" placeholder="Password..." >
-            <input class="signin" type="password" name="confirmpassword" placeholder="Confirm password..." >
-          
+            <input class="signin" type="name" name="firstname" placeholder="First name...">
+            <input class="signin" type="name" name="efternamn" placeholder="Last name...">
+            <input class="signin" type="name" name="username" placeholder="Username...">
+            <input class="signin" type="email" name="email" placeholder="Email...">
+            <input class="signin" type="password" name="password" placeholder="Password...">
+            <input class="signin" type="password" name="confirmpassword" placeholder="Confirm password...">
+
             <input class="signin Btn" type="submit" value="signup" id="Signup">
         </form>
     </div>
     <?php
     $link = mysqli_connect("localhost", "root", "", "tournament");
 
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['efternamn'];
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirmpassword'];
 
 
-    if (empty($firstname) || empty($lastname) || empty($username) || empty($email) || empty($password) || empty($confirm_password)) {
-        echo "please write your information";
+
+    if (empty($_POST['firstname']) || empty($_POST['efternamn']) || empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['confirmpassword'])) {
+        echo "Please write your information";
     } else {
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['efternamn'];
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $confirm_password = $_POST['confirmpassword'];
         if ($password != $confirm_password) {
             echo "Password did not match";
         } else $sql = "INSERT INTO spelare (firstname, lastname, username, email, pass) VALUES ('$firstname', '$lastname', '$username', '$email', '$password') ";
-           
+
         if (mysqli_query($link, $sql)) {
-             echo "<br>Info added";
-           header('loacation: login.php');
+            echo "<br>Info added";
+            header("location: login.php");
         }
-        
     }
 
     ?>
@@ -109,7 +109,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-            <p>©Copyrighted by: Akkadian E-sport 2019</p>
+            <p>©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
         </div>
         <!-- Copyright -->
 

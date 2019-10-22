@@ -25,8 +25,8 @@
     </header>
     <div class="loging">
         <form method="POST" class="login">
-            <input class="signin" type="name" name="username" placeholder="Username..." required>
-            <input class="signin" type="password" name="password" placeholder="password..." required>
+            <input class="signin" type="name" name="username" placeholder="Username...">
+            <input class="signin" type="password" name="password" placeholder="password...">
             <input class="signin Btn" type="submit" value="Login" id="loginBtn">
         </form>
     </div>
@@ -34,12 +34,22 @@
     session_start();
     
     $link = mysqli_connect("localhost", "root", "", "tournament");
-    $myusername = mysqli_real_escape_string($link, $_POST['username']);
-    $mypassword = mysqli_real_escape_string($link, $_POST['password']);
 
-    $sql = "SELECT id FROM spelare WHERE username = '$myusername' and pass = '$mypassword'";
+    if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+        header("location: tournament.php");
+        exit;
+    }else{
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $sql = "SELECT * FROM spelare WHERE username = $username AND pass = $password";
+    if($sql == true){
+        
 
-    
+    }else{
+        echo "Username and/or Password are wrong!";
+    }
+
+        
 
     ?>
 
@@ -88,7 +98,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-            <p>©Copyrighted by: Akkadian E-sport 2019</p>
+        <p>©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
         </div>
         <!-- Copyright -->
 
