@@ -31,16 +31,15 @@
         </form>
     </div>
     <?php
-
+    session_start();
+    
     $link = mysqli_connect("localhost", "root", "", "tournament");
+    $myusername = mysqli_real_escape_string($link, $_POST['username']);
+    $mypassword = mysqli_real_escape_string($link, $_POST['password']);
 
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    $sql = "SELECT id FROM spelare WHERE username = '$myusername' and pass = '$mypassword'";
 
-
-    $sql = "SELECT id, username, pass FROM spelare WHERE username = ?";
-
-
+    
 
     ?>
 
