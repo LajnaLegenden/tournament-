@@ -32,24 +32,21 @@
     </div>
     <?php
     session_start();
-    
+
     $link = mysqli_connect("localhost", "root", "", "tournament");
 
     if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
         header("location: tournament.php");
         exit;
-    }else{
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $sql = "SELECT * FROM spelare WHERE username = $username AND pass = $password";
-    if($sql == true){
-        
-
-    }else{
-        echo "Username and/or Password are wrong!";
+    } else {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $sql = "SELECT * FROM spelare WHERE username = $username AND pass = $password";
+        if ($sql) { } else {
+            echo "Username and/or Password are wrong!";
+        }
     }
 
-        
 
     ?>
 
@@ -98,7 +95,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-        <p>©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
+            <p>©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
         </div>
         <!-- Copyright -->
 
