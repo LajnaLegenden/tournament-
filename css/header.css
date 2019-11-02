@@ -17,10 +17,11 @@
 }
 
 .loginbtn:hover {
-    background: #F2E205;
-    color: black;
+    background: #CCBF49;
+    color: #7A732C;
     border-radius: 40%;
-    border: solid black;
+    border: solid #7A732C 2px;
+    text-decoration: none;
 }
 
 a:active {

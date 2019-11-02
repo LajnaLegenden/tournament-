@@ -42,7 +42,9 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $sql = "SELECT * FROM spelare WHERE username = $username AND pass = $password";
-        if ($sql) { } else {
+        if ($sql) { 
+            
+        } else {
             echo "Username and/or Password are wrong!";
         }
     }

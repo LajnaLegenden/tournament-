@@ -70,7 +70,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-            <p>©Copyrighted by: Akkadian E-sport 2019</p>
+            <p>©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
         </div>
         <!-- Copyright -->
 

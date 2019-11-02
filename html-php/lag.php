@@ -30,7 +30,7 @@
     </div>
     <h1 class="lagnamn"></h1>
     <div class="lagstatistic"></div>
-    
+
 
     <?php
 
@@ -42,15 +42,13 @@
 
     foreach ($response as $row) {
 
-        echo "<div class='laglogo'>" ."<img src='' alt=''>" . "</div>";
+        echo "<div class='laglogo'>" . "<img src='' alt=''>" . "</div>";
         echo "<h1 class='lagnamn'>" . "</h1>";
         echo "<div class='lagspelare'>" . "<ul>" . "<li class='lagcaptin>" . 'C ' . $row['username'] . "</li>" . "</ul>" . "</div>";
-        
-    
     }
 
     ?>
- <!--echo "<li class='lagplayer>" . $row['username'] . "</li>" ." ";*/ -->
+    
 
     <!--https://color.adobe.com/sv/search?q=tournament-->
 
@@ -98,7 +96,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-            <p>©Copyrighted by: Akkadian E-sport 2019</p>
+            <p>©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
         </div>
         <!-- Copyright -->
 
