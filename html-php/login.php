@@ -34,33 +34,33 @@
     session_start();
     $link = mysqli_connect("localhost", "root", "", "tournament");
 
-    if (isset($_SESSION["login_user"]) && $_SESSION["loggedin"] === true) {
+    /*if (isset($_SESSION["login_user"]) && $_SESSION["loggedin"] === true) {
         header("location: tournament.php");
         exit;
-    } else {
-        if (isset($_POST['submit'])) {
+    } else {*/
+    if (isset($_POST['submit'])) {
 
 
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $sql = "SELECT * FROM spelare WHERE username = $username AND pass = $password ";
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $sql = "SELECT * FROM 'spelare' WHERE 'username' = $username AND 'pass' = $password ";
 
 
-            $result = mysqli_query($link, $sql);
-            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            $active = $row['active'];
+        $result = mysqli_query($link, $sql);
+        $row = mysqli_fetch_assoc($result);
+        $active = $row['active'];
+        $count = mysqli_num_rows($result);
 
-            $count = mysqli_num_rows($result);
-            if ($count == 1) {
-                session_register("username");
-                $_SESSION['login_user'] = $username;
+        if ($count == 1) {
+            session_register("username");
+            $_SESSION['login_user'] = $username;
 
-                header("location: tournament.php");
-            } else {
-                $error = "Your Login Name or Password is invalid";
-            }
+            header("location: index.html");
+        } else {
+            echo "Your Login Name or Password is invalid";
         }
     }
+    //}
 
 
     ?>

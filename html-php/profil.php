@@ -31,7 +31,7 @@
 
     // kolla ifall det gick bra eller åt helsike
     if ($link === false) {
-        echo "Oh shit, something is wrong....";
+        echo "Something is wrong...";
         exit();
     }
 
@@ -42,7 +42,7 @@
 
     foreach ($response as $row) {
 
-        echo "<div id='profilPicDiv'>" . "<input id='picChooser' . type='file' . name='picChooser'>" . "<img id='profilPic' src=''>" . "</div>";
+        echo "<div id='profilPicDiv'>" . "<input id='picChooser'  type='file'  name='picChooser'>" . "<img id='profilPic' src=''>" . "</div>";
 
         echo "<div id='profilDescription'>" . "<h1 id='headerDescription'>" . $row['username'] . "</h1>" . "<p>" . $row["firstname"] . " " . $row["lastname"] . " " . $row["email"] . "</p>" . "</div>";
     }

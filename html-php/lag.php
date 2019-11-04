@@ -20,7 +20,7 @@
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
                 <a class="loginbtn" href="Profil.php"><i class="fas fa-user"></i>User</a>
-                <a class="loginbtn" href="">Tournament</a>
+                <a class="loginbtn" href="tournament.php">Tournament</a>
             </div>
 
         </nav>
@@ -35,20 +35,23 @@
     <?php
 
     $link = mysqli_connect("localhost", "root", "", "tournament");
+    /*$lag = "SELECT lag.namn  FROM lag, koppling, spelare WHERE koppling.lagID = lag.ID  AND spelarID = koppling.spelarID";
+    $resultat = mysqli_query($link, $lag);
 
+    foreach ($resultat as $row){
+    //echo "<div class='laglogo'>" . $row['logo'] . "</div>";
+    echo "<h1 class='lagnamn'>" .$row['namn']. "</h1>";}*/
     $sql = "SELECT spelare.username FROM spelare, koppling, lag WHERE spelarID = koppling.spelarID AND koppling.lagID = lag.ID";
 
     $response = mysqli_query($link, $sql);
 
-    foreach ($response as $row) {
 
-        echo "<div class='laglogo'>" . "<img src='' alt=''>" . "</div>";
-        echo "<h1 class='lagnamn'>" . "</h1>";
+    foreach ($response as $row) {
         echo "<div class='lagspelare'>" . "<ul>" . "<li class='lagcaptin>" . 'C ' . $row['username'] . "</li>" . "</ul>" . "</div>";
     }
 
     ?>
-    
+
 
     <!--https://color.adobe.com/sv/search?q=tournament-->
 
