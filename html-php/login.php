@@ -32,7 +32,6 @@
     </div>
     <?php
     session_start();
-
     $link = mysqli_connect("localhost", "root", "", "tournament");
 
     if (isset($_SESSION["login_user"]) && $_SESSION["loggedin"] === true) {
