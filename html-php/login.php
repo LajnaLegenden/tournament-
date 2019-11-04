@@ -31,6 +31,37 @@
         </form>
     </div>
     <?php
+    session_start();
+
+    $link = mysqli_connect("localhost", "root", "", "tournament");
+
+    if (isset($_SESSION["login_user"]) && $_SESSION["loggedin"] === true) {
+        header("location: tournament.php");
+        exit;
+    } else {
+        if (isset($_POST['submit'])) {
+
+
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $sql = "SELECT * FROM spelare WHERE username = $username AND pass = $password ";
+
+
+            $result = mysqli_query($link, $sql);
+            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            $active = $row['active'];
+
+            $count = mysqli_num_rows($result);
+            if ($count == 1) {
+                session_register("username");
+                $_SESSION['login_user'] = $username;
+
+                header("location: tournament.php");
+            } else {
+                $error = "Your Login Name or Password is invalid";
+            }
+        }
+    }
 
 
     ?>
@@ -64,12 +95,12 @@
                 <!-- Grid column -->
                 <div class="col-md-6 mb-md-0 mb-3">
 
-<!-- Content -->
-<h5 class="text-uppercase font-weight-bold">Contact</h5>
-<p>oliver.jam@elev.ga.ntig.se</p>
-<p>mohammedali.al-hilo@elev.ga.ntig.se</p>
+                    <!-- Content -->
+                    <h5 class="text-uppercase font-weight-bold">Contact</h5>
+                    <p>oliver.jam@elev.ga.ntig.se</p>
+                    <p>mohammedali.al-hilo@elev.ga.ntig.se</p>
 
-</div>
+                </div>
                 <!-- Grid column -->
 
             </div>
@@ -80,7 +111,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-            <p>©Copyrighted by: Akkadian E-sport 2019</p>
+            <p>©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
         </div>
         <!-- Copyright -->
 

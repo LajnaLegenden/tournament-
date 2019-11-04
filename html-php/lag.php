@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/solid.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/fontawesome.css">
     <title>Lag</title>
 </head>
 
@@ -17,18 +19,36 @@
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a class="" href=""></a>
-                <a class="" href=""></a>
+                <a class="loginbtn" href="Profil.php"><i class="fas fa-user"></i>User</a>
+                <a class="loginbtn" href="">Tournament</a>
             </div>
 
         </nav>
     </header>
+    <div class="laglogo">
+        <img src="" alt="">
+    </div>
+    <h1 class="lagnamn"></h1>
+    <div class="lagstatistic"></div>
+
 
     <?php
 
-    
-    ?>
+    $link = mysqli_connect("localhost", "root", "", "tournament");
 
+    $sql = "SELECT spelare.username FROM spelare, koppling, lag WHERE spelarID = koppling.spelarID AND koppling.lagID = lag.ID";
+
+    $response = mysqli_query($link, $sql);
+
+    foreach ($response as $row) {
+
+        echo "<div class='laglogo'>" . "<img src='' alt=''>" . "</div>";
+        echo "<h1 class='lagnamn'>" . "</h1>";
+        echo "<div class='lagspelare'>" . "<ul>" . "<li class='lagcaptin>" . 'C ' . $row['username'] . "</li>" . "</ul>" . "</div>";
+    }
+
+    ?>
+    
 
     <!--https://color.adobe.com/sv/search?q=tournament-->
 
@@ -76,7 +96,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-            <p>©Copyrighted by: Akkadian E-sport 2019</p>
+            <p>©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
         </div>
         <!-- Copyright -->
 

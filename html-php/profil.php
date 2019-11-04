@@ -17,18 +17,40 @@
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a class="loginbtn" href="login.php">Login</a>
-                <a class="loginbtn" href="signup.php">Sign Up</a>
+                <a class="loginbtn" href="Profil.php"><i class="fas fa-user"></i>User</a>
+                <a class="loginbtn" href="">Tournament</a>
             </div>
 
         </nav>
     </header>
 
-    <div id="profilPicDiv">
-        <img id="profilPic" src="">
-    </div>
+    <?php
 
+    // skapa ett handle till databasen genom att skapa en anslutning
+    $link = mysqli_connect("localhost", "root", "", "tournament");
+
+    // kolla ifall det gick bra eller åt helsike
+    if ($link === false) {
+        echo "Oh shit, something is wrong....";
+        exit();
+    }
+
+    $sql = "SELECT * FROM spelare";
+
+
+    $response = mysqli_query($link, $sql);
+
+    foreach ($response as $row) {
+
+        echo "<div id='profilPicDiv'>" . "<input id='picChooser' . type='file' . name='picChooser'>" . "<img id='profilPic' src=''>" . "</div>";
+
+        echo "<div id='profilDescription'>" . "<h1 id='headerDescription'>" . $row['username'] . "</h1>" . "<p>" . $row["firstname"] . " " . $row["lastname"] . " " . $row["email"] . "</p>" . "</div>";
+    }
+    ?>
     <!--https://color.adobe.com/sv/search?q=tournament-->
+
+
+
 
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
@@ -74,7 +96,7 @@
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-            <p>©Copyrighted by: Akkadian E-sport 2019</p>
+            <p>©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
         </div>
         <!-- Copyright -->
 
