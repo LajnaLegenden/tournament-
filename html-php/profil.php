@@ -20,9 +20,9 @@ include 'check.php'; ?>
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
                 <a class="loginbtn" href="Profil.php">
-                <?php
+                    <?php
                     echo $_SESSION['login_user'];
-                ?></a>
+                    ?></a>
                 <a class="loginbtn" href="">Tournament</a>
             </div>
 
@@ -36,18 +36,20 @@ include 'check.php'; ?>
         echo "Something is wrong...";
         exit();
     }
-    $username = $_SESSION["login_user"];
-  
-    $profil = mysql_query( "SELECT * FROM `spelar` WHERE `username` = '$username'", $link);
-    $row = mysql_fetch_assoc($profil);
+    $username = $_SESSION['login_user'];
+
+    $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
+    $respans = mysqli_query($link,$result);
+    $row = mysqli_fetch_assoc($respans);
     echo "<tr>
-            		<td valign='top'>
-            		<font size='2' face='New Times Roman'><strong>First Name:</strong> ".$row['firstname']."</font><br>
-            		<font size='2' face='New Times Roman'><strong>Last Name:</strong> ".$row['lastname']."</font><br>
-            		<font size='2' face='New Times Roman'><strong>Username:</strong> ".$row['username']." </font><br>
-            		<font size='2' face='New Times Roman'><strong>E-mail:</strong> ".$row['email']."</font><br>
-            		</td>
-       			</tr>";
+            <td>
+            	<strong>First Name:</strong> " . $row['firstname'] . "<br>
+            	<strong>Last Name:</strong> " . $row['lastname'] . "<br>
+            	<strong>Username:</strong> " . $row['username'] . "<br>
+            	<strong>E-mail:</strong> " . $row['email'] . "<br>
+            </td>
+         </tr>";
+
     ?>
     <!--https://color.adobe.com/sv/search?q=tournament-->
 
