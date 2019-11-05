@@ -1,3 +1,5 @@
+<?php include 'db.php';
+include 'check.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +19,10 @@
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a class="loginbtn" href="Profil.php"><i class="fas fa-user"></i>User</a>
+                <a class="loginbtn" href="Profil.php">
+                <?php
+                    echo $_SESSION['login_user'];
+                ?></a>
                 <a class="loginbtn" href="">Tournament</a>
             </div>
 
@@ -25,27 +30,24 @@
     </header>
 
     <?php
-
     // skapa ett handle till databasen genom att skapa en anslutning
     $link = mysqli_connect("localhost", "root", "", "tournament");
-
-    // kolla ifall det gick bra eller åt helsike
     if ($link === false) {
         echo "Something is wrong...";
         exit();
     }
-
-    $sql = "SELECT * FROM spelare";
-
-
-    $response = mysqli_query($link, $sql);
-
-    foreach ($response as $row) {
-
-        echo "<div id='profilPicDiv'>" . "<input id='picChooser'  type='file'  name='picChooser'>" . "<img id='profilPic' src=''>" . "</div>";
-
-        echo "<div id='profilDescription'>" . "<h1 id='headerDescription'>" . $row['username'] . "</h1>" . "<p>" . $row["firstname"] . " " . $row["lastname"] . " " . $row["email"] . "</p>" . "</div>";
-    }
+    $username = $_SESSION["login_user"];
+  
+    $profil = mysql_query( "SELECT * FROM `spelar` WHERE `username` = '$username'", $link);
+    $row = mysql_fetch_assoc($profil);
+    echo "<tr>
+            		<td valign='top'>
+            		<font size='2' face='New Times Roman'><strong>First Name:</strong> ".$row['firstname']."</font><br>
+            		<font size='2' face='New Times Roman'><strong>Last Name:</strong> ".$row['lastname']."</font><br>
+            		<font size='2' face='New Times Roman'><strong>Username:</strong> ".$row['username']." </font><br>
+            		<font size='2' face='New Times Roman'><strong>E-mail:</strong> ".$row['email']."</font><br>
+            		</td>
+       			</tr>";
     ?>
     <!--https://color.adobe.com/sv/search?q=tournament-->
 

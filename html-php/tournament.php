@@ -1,3 +1,5 @@
+<?php include 'db.php';
+include 'check.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +25,10 @@
 
         </nav>
     </header>
-
+    <?php 
+    $link = mysqli_connect("localhost", "root", "", "tournament");
+    
+    ?>
     <!--https://color.adobe.com/sv/search?q=tournament-->
 
     <!-- Footer -->

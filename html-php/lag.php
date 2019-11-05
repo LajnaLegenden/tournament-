@@ -1,3 +1,5 @@
+<?php include 'db.php';
+include 'check.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,17 +37,13 @@
     <?php
 
     $link = mysqli_connect("localhost", "root", "", "tournament");
-    /*$lag = "SELECT lag.namn  FROM lag, koppling, spelare WHERE koppling.lagID = lag.ID  AND spelarID = koppling.spelarID";
-    $resultat = mysqli_query($link, $lag);
-
-    foreach ($resultat as $row){
-    //echo "<div class='laglogo'>" . $row['logo'] . "</div>";
-    echo "<h1 class='lagnamn'>" .$row['namn']. "</h1>";}*/
+   
     $sql = "SELECT spelare.username FROM spelare, koppling, lag WHERE spelarID = koppling.spelarID AND koppling.lagID = lag.ID";
 
     $response = mysqli_query($link, $sql);
 
-
+    /* echo "<div class='laglogo'>" . "<img src='' alt=''>" . "</div>";
+    echo "<h1 class='lagnamn'>" . "</h1>";*/
     foreach ($response as $row) {
         echo "<div class='lagspelare'>" . "<ul>" . "<li class='lagcaptin>" . 'C ' . $row['username'] . "</li>" . "</ul>" . "</div>";
     }
@@ -53,7 +51,7 @@
     ?>
 
 
-    <!--https://color.adobe.com/sv/search?q=tournament-->
+    
 
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">

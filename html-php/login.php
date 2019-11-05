@@ -1,3 +1,5 @@
+<?php include 'db.php';
+include 'check.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,46 +26,13 @@
         </nav>
     </header>
     <div class="loging">
-        <form method="POST" class="login">
+        <form method="POST" class="login" action="db.php">
             <input class="signin" type="name" name="username" placeholder="Username...">
             <input class="signin" type="password" name="password" placeholder="password...">
-            <input class="signin Btn" type="submit" value="Login" id="loginBtn">
+            <input class="signin Btn"  type="submit" name="submit" value="Login" id="loginBtn">
         </form>
     </div>
-    <?php
-    session_start();
-    $link = mysqli_connect("localhost", "root", "", "tournament");
 
-    /*if (isset($_SESSION["login_user"]) && $_SESSION["loggedin"] === true) {
-        header("location: tournament.php");
-        exit;
-    } else {*/
-    if (isset($_POST['submit'])) {
-
-
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $sql = "SELECT * FROM 'spelare' WHERE 'username' = $username AND 'pass' = $password ";
-
-
-        $result = mysqli_query($link, $sql);
-        $row = mysqli_fetch_assoc($result);
-        $active = $row['active'];
-        $count = mysqli_num_rows($result);
-
-        if ($count == 1) {
-            session_register("username");
-            $_SESSION['login_user'] = $username;
-
-            header("location: index.html");
-        } else {
-            echo "Your Login Name or Password is invalid";
-        }
-    }
-    //}
-
-
-    ?>
 
 
     <!-- Footer -->
