@@ -36,14 +36,16 @@ include 'check.php'; ?>
 
     <?php
 
+
+        /*echo "<div class='laglogo'>" . "<img src='' alt=''>" . "</div>";
+        echo "<h1 class='lagnamn'>" . "</h1>";*/
+        
     $link = mysqli_connect("localhost", "root", "", "tournament");
    
     $sql = "SELECT spelare.username FROM spelare, koppling, lag WHERE spelarID = koppling.spelarID AND koppling.lagID = lag.ID";
 
     $response = mysqli_query($link, $sql);
 
-    /* echo "<div class='laglogo'>" . "<img src='' alt=''>" . "</div>";
-    echo "<h1 class='lagnamn'>" . "</h1>";*/
     foreach ($response as $row) {
         echo "<div class='lagspelare'>" . "<ul>" . "<li class='lagcaptin>" . 'C ' . $row['username'] . "</li>" . "</ul>" . "</div>";
     }
@@ -51,7 +53,7 @@ include 'check.php'; ?>
     ?>
 
 
-    
+        
 
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
