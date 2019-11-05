@@ -26,11 +26,17 @@
 
     <div class="loging">
         <form method="POST" class="login">
+            <h4>Firstname:</h4>
             <input class="signin" type="name" name="firstname" placeholder="First name...">
+            <h4>Lastname:</h4>
             <input class="signin" type="name" name="efternamn" placeholder="Last name...">
+            <h4>Username:</h4>
             <input class="signin" type="name" name="username" placeholder="Username...">
+            <h4>Email:</h4>
             <input class="signin" type="email" name="email" placeholder="Email...">
+            <h4>Password:</h4>
             <input class="signin" type="password" name="password" placeholder="Password...">
+            <h4>confirmpassword:</h4>
             <input class="signin" type="password" name="confirmpassword" placeholder="Confirm password...">
 
             <input class="signin Btn" type="submit" value="signup" id="Signup">

@@ -1,5 +1,6 @@
 <?php include 'db.php';
-include 'check.php'; ?>
+include 'check.php';
+include 'matchregister.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,17 +20,28 @@ include 'check.php'; ?>
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a class="loginbtn" href="login.php">Login</a>
-                <a class="loginbtn" href="signup.php">Sign Up</a>
+                <a class="loginbtn" href="Profil.php">
+                    <?php
+                    echo $_SESSION['login_user'];
+                    ?></a>
+                <a class="loginbtn" href="">Tournament</a>
             </div>
-
         </nav>
     </header>
-    <?php 
+    <form  method="POST" class="register" action="matchregister.php">
+        <h4>Home team:</h4>
+        <input type="name" name="team1" placeholder="Home team...">
+        <h4>Away team:</h4>
+        <input type="name" name="team2" placeholder="Away team...">
+        <h4>Who won:</h4>
+        <input type="name" name="result" placeholder="Winner....">
+        <input type="submit" name="submit" value="Submit">
+    </form>
+    <?php
     $link = mysqli_connect("localhost", "root", "", "tournament");
     
     ?>
-    <!--https://color.adobe.com/sv/search?q=tournament-->
+   
 
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">

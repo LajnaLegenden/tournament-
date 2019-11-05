@@ -1,5 +1,5 @@
 <?php include 'db.php';
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,9 +27,11 @@
     </header>
     <div class="loging">
         <form method="POST" class="login" action="db.php">
+            <h4>Username:</h4>
             <input class="signin" type="name" name="username" placeholder="Username...">
+            <h4>Password:</h4>
             <input class="signin" type="password" name="password" placeholder="password...">
-            <input class="signin Btn"  type="submit" name="submit" value="Login" id="loginBtn">
+            <input class="signin Btn" type="submit" name="submit" value="Login" id="loginBtn">
         </form>
     </div>
 
