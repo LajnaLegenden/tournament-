@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
     $secondlag = $_POST['team2'];
     $winnerlag = $_POST['result'];
     if(!isset($firstlag) || !isset($secondlag) || !isset($winnerlag) || empty($firstlag)|| empty($secondlag) || empty($winnerlag) || $secondlag == $firstlag){
-        header('location: tournament.php');
+        header('location: error.html');
         exit;
     }
     $flag =  "SELECT * FROM `lag` WHERE `Namn` = '$firstlag'";

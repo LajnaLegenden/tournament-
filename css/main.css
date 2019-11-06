@@ -17,12 +17,19 @@
 
 .signin {
     padding: 12px;
-    border: 1px solid #ccc;
     border-radius: 4px;
     display: table;
     margin: auto;
-    margin-top: 4%;
     /*box-sizing: border-box;*/
+}
+
+.logout {
+    position: absolute;
+    display: table;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 27%;
+    width: 100%;
 }
 
 .Btn {
@@ -101,4 +108,17 @@
 
 #divDescription {
     text-align: center;
+}
+
+.info {
+    float: right;
+    align-content: center;
+    padding: 10%;
+    font-size: 25px;
+}
+
+.userimg {
+    max-height: 40vh;
+    max-width: 50vh;
+    margin-left: 10%;
 }

@@ -23,36 +23,49 @@ include 'check.php'; ?>
                     <?php
                     echo $_SESSION['login_user'];
                     ?></a>
-                <a class="loginbtn" href="">Tournament</a>
+                <a class="loginbtn" href="tournament.php">Tournament</a>
             </div>
 
         </nav>
     </header>
+    <!---<form action="upload.php" method="post" enctype="multipart/form-data">
+        <h4> image to upload:</h4>
+        <input type="file" name="image"/>
+        <input type="submit" name="submit" value="UPLOAD"/>
+    </form>-->
 
     <?php
     // skapa ett handle till databasen genom att skapa en anslutning
     $link = mysqli_connect("localhost", "root", "", "tournament");
     if ($link === false) {
         echo "Something is wrong...";
+        header('location: error.html');
         exit();
     }
+
+   
+
     $username = $_SESSION['login_user'];
 
     $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
-    $respans = mysqli_query($link,$result);
+    $respans = mysqli_query($link, $result);
     $row = mysqli_fetch_assoc($respans);
-    echo "<tr>
-            <td>
-            	<strong>First Name:</strong> " . $row['firstname'] . "<br>
-            	<strong>Last Name:</strong> " . $row['lastname'] . "<br>
-            	<strong>Username:</strong> " . $row['username'] . "<br>
-            	<strong>E-mail:</strong> " . $row['email'] . "<br>
-            </td>
-         </tr>";
+    echo '<img class="userimg" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>';
+    echo "<div class='info'>
+            <tr>
+                <td class='infotable'>
+            	    <strong>First Name:</strong> " . $row['firstname'] . "<br>
+            	    <strong>Last Name:</strong> " . $row['lastname'] . "<br>
+            	    <strong>Username:</strong> " . $row['username'] . "<br>
+            	    <strong>E-mail:</strong> " . $row['email'] . "<br>
+                </td>
+            </tr>
+         </div>";
 
     ?>
-    <!--https://color.adobe.com/sv/search?q=tournament-->
-
+    <form method="POST" class="register" action="out.php">
+        <input class="logout Btn" type="submit" name="submit" value="Logout">
+    </form>
 
 
 
