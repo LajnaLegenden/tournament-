@@ -122,3 +122,22 @@
     max-width: 50vh;
     margin-left: 10%;
 }
+
+#lagNamn {
+    text-align: center;
+}
+
+.spelarNamn {
+    text-align: center;
+}
+
+.error {
+    font-size: 7rem;
+    font-weight: 500;
+    text-shadow: 5px 5px grey;
+}
+
+#aids {
+    text-align: center;
+    margin-top: 40vh;
+}
