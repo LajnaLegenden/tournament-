@@ -21,8 +21,11 @@ include 'check.php'; ?>
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a class="loginbtn" href="Profil.php"><i class="fas fa-user"></i>User</a>
-                <a class="loginbtn" href="tournament.php">Tournament</a>
+                <a class="loginbtn" href="Profil.php">
+                    <?php
+                    echo $_SESSION['login_user'];
+                    ?></a>
+                <a class="loginbtn" href="">Tournament</a>
             </div>
 
         </nav>
@@ -41,19 +44,43 @@ include 'check.php'; ?>
         echo "<h1 class='lagnamn'>" . "</h1>";*/
         
     $link = mysqli_connect("localhost", "root", "", "tournament");
-   
-    $sql = "SELECT spelare.username FROM spelare, koppling, lag WHERE spelarID = koppling.spelarID AND koppling.lagID = lag.ID";
 
-    $response = mysqli_query($link, $sql);
+    $username = $_SESSION['login_user'];
 
-    foreach ($response as $row) {
-        echo "<div class='lagspelare'>" . "<ul>" . "<li class='lagcaptin>" . 'C ' . $row['username'] . "</li>" . "</ul>" . "</div>";
+    $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
+    $respans = mysqli_query($link,$result);
+    $row = mysqli_fetch_assoc($respans);
+    $userid = $row['ID'];
+
+
+    $result =  "SELECT * FROM `koppling` WHERE `spelarID` = '$userid'";
+    $respans = mysqli_query($link,$result);
+    $row = mysqli_fetch_assoc($respans);
+    $lagID = $row['lagID'];
+
+    $result =  "SELECT * FROM `lag` WHERE `ID` = '$lagID'";
+    $respans = mysqli_query($link,$result);
+    $row = mysqli_fetch_assoc($respans);
+    $lagnamn = $row['Namn'];
+
+    echo "<h1 id='lagNamn'> Team: $lagnamn  </h1>"; 
+
+    $result =  "SELECT * FROM `koppling` WHERE `lagID` = '$lagID'";
+    $respans = mysqli_query($link,$result);
+    $row = mysqli_fetch_assoc($respans);
+    foreach ($respans as $row)
+    {
+        $spelarID = $row['spelarID'];
+        $result =  "SELECT * FROM `spelare` WHERE `ID` = '$spelarID'";
+        $respans = mysqli_query($link,$result);
+        $row = mysqli_fetch_assoc($respans);
+        $usernames = $row['username'];
+        echo "<strong class='spelarNamn'>Username:</strong> " . $usernames  . "<br>";
+
     }
 
+   
     ?>
-
-
-        
 
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
