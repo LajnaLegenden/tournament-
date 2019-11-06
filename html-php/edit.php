@@ -34,6 +34,9 @@ include 'check.php'; ?>
         <input type="submit" name="submit" value="UPLOAD"/>
     </form>-->
 
+    
+
+
     <?php
     // skapa ett handle till databasen genom att skapa en anslutning
     $link = mysqli_connect("localhost", "root", "", "tournament");
@@ -50,21 +53,24 @@ include 'check.php'; ?>
     $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
     $respans = mysqli_query($link, $result);
     $row = mysqli_fetch_assoc($respans);
-    echo '<img class="userimg" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>';
     echo "<div class='info'>
             <tr>
-                <td class='infotable'>
-            	    <strong>First Name:</strong> " . $row['firstname'] . "<br>
-            	    <strong>Last Name:</strong> " . $row['lastname'] . "<br>
+                <td class='infotable'> 
             	    <strong>Username:</strong> " . $row['username'] . "<br>
-            	    <strong>E-mail:</strong> " . $row['email'] . "<br>
                 </td>
             </tr>
          </div>";
 
     ?>
-
-    <button type="button" href="edit.php">Edit Profil </button>
+    <p class="editUser">Firstname</p>
+    <input type="text" name="FirstName" placeholder="Firstname"> <br>
+    <p class="editUser">Lastname</p>
+    <input type="text" name="Lastname" placeholder="Lastname"> <br>
+    <p class="editUser">Username</p>
+    <?php echo "<input type='text' value=" . $row['username'] . " </input> <br>"; ?>
+    <p class="editUser">Email</p>
+    <input type="text" name="Email" placeholder="Email">
+    
 
     <form method="POST" class="register" action="out.php">
         <input class="logout Btn" type="submit" name="submit" value="Logout">
@@ -86,9 +92,9 @@ include 'check.php'; ?>
 
                     <!-- Content -->
                     <h5 class="text-uppercase font-weight-bold">admininfo</h5>
-                    <p>Oliver Jam - <a href="
+                    <p class="editUser">Oliver Jam - <a href="
                         https://discordapp.com/users/176736575302926336" class="discord">DAT BOI#9599</a></p>
-                    <p>Mohammed Ali Al-Hilo -
+                    <p class="editUser">Mohammed Ali Al-Hilo -
                         <a href="
                     https://discordapp.com/users/246718596556783617" class="discord"> Ali.M #3531</a></p>
 
@@ -102,8 +108,8 @@ include 'check.php'; ?>
 
                     <!-- Content -->
                     <h5 class="text-uppercase font-weight-bold">Contact</h5>
-                    <p>oliver.jam@elev.ga.ntig.se</p>
-                    <p>mohammedali.al-hilo@elev.ga.ntig.se</p>
+                    <p class="editUser">oliver.jam@elev.ga.ntig.se</p>
+                    <p class="editUser">mohammedali.al-hilo@elev.ga.ntig.se</p>
 
                 </div>
                 <!-- Grid column -->
@@ -116,7 +122,7 @@ include 'check.php'; ?>
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-            <p>©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
+            <p class="editUser">©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
         </div>
         <!-- Copyright -->
 
