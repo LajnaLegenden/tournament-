@@ -53,13 +53,6 @@ include 'check.php'; ?>
     $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
     $respans = mysqli_query($link, $result);
     $row = mysqli_fetch_assoc($respans);
-    echo "<div class='info'>
-            <tr>
-                <td class='infotable'> 
-            	    <strong>Username:</strong> " . $row['username'] . "<br>
-                </td>
-            </tr>
-         </div>";
 
     ?>
     <p class="editUser">Firstname</p>
@@ -92,12 +85,11 @@ include 'check.php'; ?>
 
                     <!-- Content -->
                     <h5 class="text-uppercase font-weight-bold">admininfo</h5>
-                    <p class="editUser">Oliver Jam - <a href="
+                    <p>Oliver Jam - <a href="
                         https://discordapp.com/users/176736575302926336" class="discord">DAT BOI#9599</a></p>
-                    <p class="editUser">Mohammed Ali Al-Hilo -
+                    <p>Mohammed Ali Al-Hilo -
                         <a href="
                     https://discordapp.com/users/246718596556783617" class="discord"> Ali.M #3531</a></p>
-
                 </div>
                 <!-- Grid column -->
 
@@ -108,8 +100,8 @@ include 'check.php'; ?>
 
                     <!-- Content -->
                     <h5 class="text-uppercase font-weight-bold">Contact</h5>
-                    <p class="editUser">oliver.jam@elev.ga.ntig.se</p>
-                    <p class="editUser">mohammedali.al-hilo@elev.ga.ntig.se</p>
+                    <p>oliver.jam@elev.ga.ntig.se</p>
+                    <p>mohammedali.al-hilo@elev.ga.ntig.se</p>
 
                 </div>
                 <!-- Grid column -->
@@ -122,7 +114,7 @@ include 'check.php'; ?>
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
-            <p class="editUser">©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
+            <p>©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
         </div>
         <!-- Copyright -->
 
