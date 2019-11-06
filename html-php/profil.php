@@ -19,10 +19,9 @@ include 'check.php'; ?>
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a class="loginbtn" href="Profil.php">
-                    <?php
-                    echo $_SESSION['login_user'];
-                    ?></a>
+                <form method="POST" class="register" action="out.php">
+                    <input class="loginbtn" type="submit" name="submit" value="Logout">
+                </form>
                 <a class="loginbtn" href="tournament.php">Tournament</a>
             </div>
 
@@ -43,14 +42,14 @@ include 'check.php'; ?>
         exit();
     }
 
-   
+
 
     $username = $_SESSION['login_user'];
 
     $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
     $respans = mysqli_query($link, $result);
     $row = mysqli_fetch_assoc($respans);
-    echo '<img class="userimg" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/>';
+    echo '<img class="userimg" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '"/>';
     echo "<div class='info'>
             <tr>
                 <td class='infotable'>
@@ -63,9 +62,6 @@ include 'check.php'; ?>
          </div>";
 
     ?>
-    <form method="POST" class="register" action="out.php">
-        <input class="logout Btn" type="submit" name="submit" value="Logout">
-    </form>
 
 
 

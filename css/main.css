@@ -23,7 +23,8 @@
     /*box-sizing: border-box;*/
 }
 
-.logout {
+
+/*.logout {
     position: absolute;
     display: table;
     padding: 12px;
@@ -31,6 +32,7 @@
     margin-top: 27%;
     width: 100%;
 }
+*/
 
 .Btn {
     background: #BF9663;
