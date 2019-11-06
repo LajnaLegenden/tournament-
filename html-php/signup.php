@@ -57,8 +57,19 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
         $confirm_password = $_POST['confirmpassword'];
-        if ($password != $confirm_password) {
+
+        $sql = "SELECT * FROM `spelare` WHERE `username` = '$username'";
+
+
+        $result = mysqli_query($link, $sql);
+
+
+        if (mysqli_num_rows($result) == true) {
+            echo "username is already taken";
+            exit;
+        } else if ($password != $confirm_password) {
             echo "Password did not match";
+            exit;
         } else $sql = "INSERT INTO spelare (firstname, lastname, username, email, pass) VALUES ('$firstname', '$lastname', '$username', '$email', '$password') ";
 
         if (mysqli_query($link, $sql)) {
