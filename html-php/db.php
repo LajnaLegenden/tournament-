@@ -10,7 +10,8 @@
 
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $sql = "SELECT * FROM `spelare` WHERE `username` = '$username' AND `pass` = '$password' ";
+        $hash = base64_encode($password);
+        $sql = "SELECT * FROM `spelare` WHERE `username` = '$username' AND `pass` = '$hash' ";
 
 
         $result = mysqli_query($link, $sql);

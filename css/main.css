@@ -30,6 +30,8 @@
     border-radius: 4px #FF1100;
     display: table;
     margin: auto;
+    margin-top: 1rem;
+    border: none;
 }
 
 
@@ -58,6 +60,19 @@
 }
 
 .signin:hover {
+    box-shadow: 3px 3px grey;
+}
+
+#signin {
+    margin-top: 1rem;
+    padding: 12px;
+    border-radius: 4px;
+    display: table;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+#signin:hover {
     box-shadow: 3px 3px grey;
 }
 

@@ -65,7 +65,7 @@ include 'check.php'; ?>
         <?php echo "<input type='text' class='signin' value=" . $row['username'] . " </input> <br>"; ?>
         <p class="editUser">Email</p>
         <input class="signin" type="text" name="email" placeholder="Email">
-        <input class="signin Btn" type="submit" value="submit" name="submit" id="Save edit">
+        <input  class=" Btn" type="submit" value="submit" name="submit" id="signin">
     </form>
 
     <form method="POST" id="delete" action="delete.php">

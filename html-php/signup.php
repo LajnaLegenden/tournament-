@@ -70,11 +70,14 @@
         } else if ($password != $confirm_password) {
             echo "Password did not match";
             exit;
-        } else $sql = "INSERT INTO spelare (firstname, lastname, username, email, pass) VALUES ('$firstname', '$lastname', '$username', '$email', '$password') ";
+        } else {
+            $crypterad = base64_encode($password);
+            $sql = "INSERT INTO spelare (firstname, lastname, username, email, pass) VALUES ('$firstname', '$lastname', '$username', '$email', '$crypterad') ";
 
-        if (mysqli_query($link, $sql)) {
-            echo "<br>Info added";
-            header("location: login.php");
+            if (mysqli_query($link, $sql)) {
+                echo "<br>Info added";
+                header("location: login.php");
+            }
         }
     }
 
