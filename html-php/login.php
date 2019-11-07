@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+<?php include 'db.php';
+?>
+>>>>>>> 307ba09b82f46cfbf096ae1e1ae687c820e3aa23
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,14 +13,24 @@
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
+<<<<<<< HEAD
     <title>Document</title>
 </head>
 
 <body>
+=======
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Login</title>
+</head>
+
+<body class="body">
+>>>>>>> 307ba09b82f46cfbf096ae1e1ae687c820e3aa23
     <header>
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
+<<<<<<< HEAD
                 <a href="login.php">Login</a>
                 <a href="signup.php">Sign Up</a>
             </div>
@@ -28,6 +43,75 @@
         <input type="submit" value="Send">
     </form>
 
+=======
+                <a class="loginbtn" href="login.php">Login</a>
+                <a class="loginbtn" href="signup.php">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+    <div class="loging">
+        <form method="POST" class="login" action="db.php">
+            <h4>Username:</h4>
+            <input class="signin" type="name" name="username" placeholder="Username...">
+            <h4>Password:</h4>
+            <input class="signin" type="password" name="password" placeholder="password...">
+            <input class="signin Btn" type="submit" name="submit" value="Login" id="loginBtn">
+        </form>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small teal pt-4">
+
+        <!-- Footer Text -->
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mt-md-0 mt-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase font-weight-bold">admininfo</h5>
+                    <p>Oliver Jam - <a href="
+                        https://discordapp.com/users/176736575302926336" class="discord">DAT BOI#9599</a></p>
+                    <p>Mohammed Ali Al-Hilo -
+                        <a href="
+                    https://discordapp.com/users/246718596556783617" class="discord"> Ali.M #3531</a></p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mb-md-0 mb-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase font-weight-bold">Contact</h5>
+                    <p>oliver.jam@elev.ga.ntig.se</p>
+                    <p>mohammedali.al-hilo@elev.ga.ntig.se</p>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Text -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            <p>©Copyrighted by: <a href="https://discord.gg/SDQ6Dxp" class="discord">Akkadian E-sport 2019</a></p>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+>>>>>>> 307ba09b82f46cfbf096ae1e1ae687c820e3aa23
     <script src="../js/header.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/footer.js"></script>
