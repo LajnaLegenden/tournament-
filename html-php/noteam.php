@@ -1,6 +1,5 @@
 <?php include 'db.php';
-include 'check.php'; 
-include 'clancheck.php'; ?>
+include 'check.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,57 +30,10 @@ include 'clancheck.php'; ?>
 
         </nav>
     </header>
-    <div class="laglogo">
-        <img src="" alt="">
+    <div style="text-align: center; margin-top:20vh;">
+        <p id="erText" style="font-size: 5rem; font-weight: 500; text-shadow: 5px 5px white; margin-top:0%;">You are not in a clan! <br></p>
+        <p id="erText" style="font-size: 5rem; font-weight: 500; text-shadow: 5px 5px white;">Contact admin to join a clan...</p>
     </div>
-    <h1 class="lagnamn"></h1>
-    <div class="lagstatistic"></div>
-
-
-    <?php
-
-
-        /*echo "<div class='laglogo'>" . "<img src='' alt=''>" . "</div>";
-        echo "<h1 class='lagnamn'>" . "</h1>";*/
-        
-    $link = mysqli_connect("localhost", "root", "", "tournament");
-
-    $username = $_SESSION['login_user'];
-
-    $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
-    $respans = mysqli_query($link,$result);
-    $row = mysqli_fetch_assoc($respans);
-    $userid = $row['ID'];
-
-
-    $result =  "SELECT * FROM `koppling` WHERE `spelarID` = '$userid'";
-    $respans = mysqli_query($link,$result);
-    $row = mysqli_fetch_assoc($respans);
-    $lagID = $row['lagID'];
-
-    $result =  "SELECT * FROM `lag` WHERE `ID` = '$lagID'";
-    $respans = mysqli_query($link,$result);
-    $row = mysqli_fetch_assoc($respans);
-    $lagnamn = $row['Namn'];
-
-    echo "<h1 id='lagNamn'> Team: $lagnamn [" .$row['Tag']."]  </h1>"; 
-
-    $result =  "SELECT * FROM `koppling` WHERE `lagID` = '$lagID'";
-    $respans = mysqli_query($link,$result);
-    $row = mysqli_fetch_assoc($respans);
-    foreach ($respans as $row)
-    {
-        $spelarID = $row['spelarID'];
-        $result =  "SELECT * FROM `spelare` WHERE `ID` = '$spelarID'";
-        $respans = mysqli_query($link,$result);
-        $row = mysqli_fetch_assoc($respans);
-        $usernames = $row['username'];
-        echo "<strong class='spelarNamn'>Username:</strong> " . $usernames  . "<br>";
-
-    }
-
-   
-    ?>
 
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
@@ -98,10 +50,10 @@ include 'clancheck.php'; ?>
                     <!-- Content -->
                     <h5 class="text-uppercase font-weight-bold">admininfo</h5>
                     <p>Oliver Jam - <a href="
-                        https://discordapp.com/users/176736575302926336" class="discord">DAT BOI#9599</a></p>
+                            https://discordapp.com/users/176736575302926336" class="discord">DAT BOI#9599</a></p>
                     <p>Mohammed Ali Al-Hilo -
                         <a href="
-                    https://discordapp.com/users/246718596556783617" class="discord"> Ali.M #3531</a></p>
+                        https://discordapp.com/users/246718596556783617" class="discord"> Ali.M #3531</a></p>
 
                 </div>
                 <!-- Grid column -->

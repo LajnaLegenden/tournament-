@@ -48,20 +48,32 @@ include 'check.php'; ?>
     $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
     $respans = mysqli_query($link, $result);
     $row = mysqli_fetch_assoc($respans);
-    if ($row['image'] > 0) {
-        echo '<img class="userimg" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '"/>';
-    }
+    $userid = $row['ID'];
+ 
+    $res =  "SELECT * FROM `koppling` WHERE `spelarID` = '$userid'";
+    $resp = mysqli_query($link, $res);
+    $ro = mysqli_fetch_assoc($resp);
+    $lagID = $ro['lagID'];
 
-    echo "<div class='info'>
+    $re =  "SELECT * FROM `lag` WHERE `ID` = '$lagID'";
+    $respa = mysqli_query($link, $re);
+    $r = mysqli_fetch_assoc($respa);
+    $lagnamn = $r['Tag'];
+   echo "<div class='info'>
             <tr>
                 <td class='infotable'>
-            	    <strong>First Name:</strong> " . $row['firstname'] . "<br>
+            	    <strong>First Name:</strong> " . $row['firstname']  ." [". $lagnamn."] <br>
             	    <strong>Last Name:</strong> " . $row['lastname'] . "<br>
             	    <strong>Username:</strong> " . $row['username'] . "<br>
             	    <strong>E-mail:</strong> " . $row['email'] . "<br>
                 </td>
             </tr>
          </div>";
+    if (isset($row['image'])) {
+        echo '<img class="userimg" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '"/>';
+    }
+
+
 
     ?>
 
