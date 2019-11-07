@@ -209,3 +209,7 @@
     text-decoration: none;
     border-radius: 25%;
 }
+
+#changePicBtn {
+    margin-left: 37vh;
+}

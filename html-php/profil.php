@@ -32,6 +32,8 @@ include 'check.php'; ?>
         <input type="submit" name="submit" value="UPLOAD"/>
     </form>-->
 
+
+
     <?php
     // skapa ett handle till databasen genom att skapa en anslutning
     $link = mysqli_connect("localhost", "root", "", "tournament");
@@ -69,21 +71,24 @@ include 'check.php'; ?>
                 </td>
             </tr>
          </div>";
+
+    ?>
+
+<div id="imgBox">
+
+    <?php
+
     if (isset($row['image'])) {
         echo '<img class="userimg" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '"/>';
     }
 
-
-
     ?>
 
-
-
     <form method="POST" class="register" action="edit.php">
-        <input class="signin Btn" type="submit" name="submit" value="edit profile">
+        <input class="signin Btn" id="changePicBtn" type="submit" name="submit" value="Edit Profile">
     </form>
 
-
+</div>
 
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
