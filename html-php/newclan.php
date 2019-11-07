@@ -1,3 +1,5 @@
+<?php
+include 'check.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Login</title>
+    <title>Clan</title>
 </head>
 
 <body class="body">
@@ -18,20 +20,72 @@
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a class="loginbtn" href="login.php">Login</a>
-                <a class="loginbtn" href="signup.php">Sign Up</a>
+                <a class="loginbtn" href="Profil.php">
+                    <?php
+                    echo $_SESSION['login_user'];
+                    ?></a>
+                <a class="loginbtn" href="tournament.php">Tournament</a>
+                <a class="loginbtn" href="lag.php">See clan</a>
             </div>
         </nav>
     </header>
+
     <div class="loging">
-        <form method="POST" class="login" action="db.php">
-            <h4>Username:</h4>
-            <input class="signin" type="name" name="username" placeholder="Username...">
-            <h4>Password:</h4>
-            <input class="signin" type="password" name="password" placeholder="password...">
-            <input class="signin Btn" type="submit" name="submit" value="Login" id="loginBtn">
+        <form method="POST" class="login" action="newclan.php" >
+            <h4>Clan Name:</h4>
+            <input class="signin" type="name" name="Clanname" placeholder="Clan name...">
+            <h4>Clan tag:</h4>
+            <input class="signin" type="name" name="Clantag" placeholder="Clan tag...">
+
+            <input class="signin Btn" type="submit" value="submit" id="Signup" name="submit">
         </form>
     </div>
+    <?php
+    $link = mysqli_connect("localhost", "root", "", "tournament");
+
+
+    if (isset($_POST['submit'])) {
+
+        if (empty($_POST['Clanname']) || empty($_POST['Clantag']) ) {
+            echo "Please write your information";
+        } else {
+            $clannamn = $_POST['Clanname'];
+            $clantag = $_POST['Clantag'];
+
+            $sql = "SELECT * FROM `lag` WHERE `Namn` = '$clannamn'";
+            $result = mysqli_query($link, $sql);
+
+            $s = "SELECT * FROM `lag` WHERE `Tag` = '$clantag'";
+            $r = mysqli_query($link, $s);
+
+            if (mysqli_num_rows($result) || mysqli_num_rows($r)) {
+                echo "Clan name and Tag are already taken";
+                exit;
+            } else {
+                $sl = "INSERT INTO `lag` (Namn, Tag) VALUES ('$clannamn', '$clantag')";
+                $rs = mysqli_query($link, $sl);
+
+                if (mysqli_query($link,$sl)) {
+                    $username = $_SESSION['login_user'];
+                    $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
+                    $respans = mysqli_query($link, $result);
+                    $row = mysqli_fetch_assoc($respans);
+                    $userid = $row['ID'];
+
+                    $r =  "SELECT * FROM `lag` WHERE `Namn` = '$clannamn'";
+                    $res = mysqli_query($link, $r);
+                    $row = mysqli_fetch_assoc($res);
+                    $lagID = $row['ID'];
+
+                    $s = "INSERT INTO `koppling` (`lagID`, `spelarID`) VALUES ('$lagID', '$userid')";
+                    mysqli_query($link,$s);
+                    header("location: lag.php");
+                    exit;
+                }
+            }
+        }
+    }
+    ?>
 
 
 

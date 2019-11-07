@@ -80,7 +80,7 @@ include 'check.php'; ?>
 
 
     <form method="POST" class="register" action="edit.php">
-        <input class="signin Btn" type="submit" name="submit" value="edit profile">
+        <input class="signin Btn" type="submit" name="submit" value="Edit profile">
     </form>
 
 
