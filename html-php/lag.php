@@ -1,5 +1,5 @@
 <?php include 'db.php';
-include 'check.php'; 
+include 'check.php';
 include 'clancheck.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,48 +41,48 @@ include 'clancheck.php'; ?>
     <?php
 
 
-        /*echo "<div class='laglogo'>" . "<img src='' alt=''>" . "</div>";
+    /*echo "<div class='laglogo'>" . "<img src='' alt=''>" . "</div>";
         echo "<h1 class='lagnamn'>" . "</h1>";*/
-        
+
     $link = mysqli_connect("localhost", "root", "", "tournament");
 
     $username = $_SESSION['login_user'];
 
     $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
-    $respans = mysqli_query($link,$result);
+    $respans = mysqli_query($link, $result);
     $row = mysqli_fetch_assoc($respans);
     $userid = $row['ID'];
 
 
     $result =  "SELECT * FROM `koppling` WHERE `spelarID` = '$userid'";
-    $respans = mysqli_query($link,$result);
+    $respans = mysqli_query($link, $result);
     $row = mysqli_fetch_assoc($respans);
     $lagID = $row['lagID'];
 
     $result =  "SELECT * FROM `lag` WHERE `ID` = '$lagID'";
-    $respans = mysqli_query($link,$result);
+    $respans = mysqli_query($link, $result);
     $row = mysqli_fetch_assoc($respans);
     $lagnamn = $row['Namn'];
 
-    echo "<h1 id='lagNamn'> Team: $lagnamn [" .$row['Tag']."]  </h1>"; 
+    echo "<h1 id='lagNamn'> Team: $lagnamn [" . $row['Tag'] . "]  </h1>";
 
     $result =  "SELECT * FROM `koppling` WHERE `lagID` = '$lagID'";
-    $respans = mysqli_query($link,$result);
+    $respans = mysqli_query($link, $result);
     $row = mysqli_fetch_assoc($respans);
-    foreach ($respans as $row)
-    {
+    foreach ($respans as $row) {
         $spelarID = $row['spelarID'];
         $result =  "SELECT * FROM `spelare` WHERE `ID` = '$spelarID'";
-        $respans = mysqli_query($link,$result);
+        $respans = mysqli_query($link, $result);
         $row = mysqli_fetch_assoc($respans);
         $usernames = $row['username'];
         echo "<strong class='spelarNamn'>Username:</strong> " . $usernames  . "<br>";
-
     }
 
-   
-    ?>
 
+    ?>
+    <form method="POST" id="delete" action="leave.php">
+        <input class="delete" type="submit" name="submit" value="Leave clan">
+    </form>
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
 
