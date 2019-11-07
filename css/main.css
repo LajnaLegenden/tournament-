@@ -134,12 +134,9 @@
     margin-left: 10%;
 }
 
-#lagNamn {
-    text-align: center;
-}
-
-.spelarNamn {
-    text-align: center;
+#spelarNamn {
+    font-size: 1.5rem;
+    margin-bottom: -0.7rem;
 }
 
 #error {
@@ -179,4 +176,36 @@
     float: center;
     display: table;
     margin: auto;
+}
+
+#spelareLag {
+    text-align: center;
+}
+
+#lagNamn {
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+#matchRegister {
+    text-align: center;
+}
+
+#winnerBtn {
+    margin-bottom: 0.5rem;
+}
+
+#matchBtn {
+    background: #D18B30;
+    border: none;
+    border-radius: 25%;
+    padding: 0.5rem;
+}
+
+#matchBtn:hover {
+    background: #CCBF49;
+    color: #7A732C;
+    text-decoration: none;
+    border-radius: 25%;
 }

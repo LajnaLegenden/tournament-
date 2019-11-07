@@ -28,15 +28,20 @@ include 'matchregister.php'; ?>
             </div>
         </nav>
     </header>
+
+<div id="matchRegister">
+
     <form  method="POST" class="register" action="matchregister.php">
         <h4>Home team:</h4>
         <input type="name" name="team1" placeholder="Home team...">
         <h4>Away team:</h4>
         <input type="name" name="team2" placeholder="Away team...">
         <h4>Who won:</h4>
-        <input type="name" name="result" placeholder="Winner....">
-        <input type="submit" name="submit" value="Submit">
+        <input id="winnerBtn" type="name" name="result" placeholder="Winner...."> <br>
+        <input id="matchBtn" type="submit" name="submit" value="Submit">
     </form>
+
+</div>
     <?php
     $link = mysqli_connect("localhost", "root", "", "tournament");
     

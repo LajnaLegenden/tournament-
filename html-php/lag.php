@@ -37,6 +37,7 @@ include 'clancheck.php'; ?>
     <h1 class="lagnamn"></h1>
     <div class="lagstatistic"></div>
 
+<div id="spelareLag">
 
     <?php
 
