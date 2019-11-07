@@ -36,6 +36,7 @@ include 'check.php'; ?>
     <h1 class="lagnamn"></h1>
     <div class="lagstatistic"></div>
 
+<div id="spelareLag">
 
     <?php
 
@@ -63,7 +64,7 @@ include 'check.php'; ?>
     $row = mysqli_fetch_assoc($respans);
     $lagnamn = $row['Namn'];
 
-    echo "<h1 id='lagNamn'> Team: $lagnamn  </h1>"; 
+    echo "<p id='lagNamn'> Team: $lagnamn  </p>"; 
 
     $result =  "SELECT * FROM `koppling` WHERE `lagID` = '$lagID'";
     $respans = mysqli_query($link,$result);
@@ -75,12 +76,14 @@ include 'check.php'; ?>
         $respans = mysqli_query($link,$result);
         $row = mysqli_fetch_assoc($respans);
         $usernames = $row['username'];
-        echo "<strong class='spelarNamn'>Username:</strong> " . $usernames  . "<br>";
+        echo "<p id='spelarNamn'> <strong>Username:</strong> " . $usernames  . "</p> <br>";
 
     }
 
    
     ?>
+
+</div>
 
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
