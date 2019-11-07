@@ -34,9 +34,12 @@ include 'check.php'; ?>
         <form method="POST" class="login" action="noteam.php">
             <h4>Search for an existing clan by name:</h4>
             <input class="signin" type="name" name="clannamn" placeholder="Clanname...">
-            <input class="signin Btn" type="submit" name="submit" value="Search" id="loginBtn">
+            <input class="signin Btn" id="clanSearchBtn" type="submit" name="submit" value="Search" id="loginBtn">
         </form>
     </div>
+
+    <div id="clanSearchBox">
+
     <?php
 
     $link = mysqli_connect("localhost", "root", "", "tournament");
@@ -52,7 +55,7 @@ include 'check.php'; ?>
             if (mysqli_num_rows($respans) == true) {
                 $lagnamn = $row['Namn'];
                 $lagID = $row['ID'];
-                echo "<h1 id='lagNamn'> Team: $lagnamn [" . $row['Tag'] . "]  </h1>";
+                echo "<h1 id='lagNamnTag'> Team: $lagnamn [" . $row['Tag'] . "]  </h1>";
 
                 $result =  "SELECT * FROM `koppling` WHERE `lagID` = '$lagID'";
                 $respans = mysqli_query($link, $result);
@@ -63,9 +66,11 @@ include 'check.php'; ?>
                     $respans = mysqli_query($link, $result);
                     $row = mysqli_fetch_assoc($respans);
                     $usernames = $row['username'];
-                    echo "<strong class='spelarNamn'>Member:</strong> " . $usernames  . "<br>";
+                    echo "<p class='spelarNamn' id='spelarNamnNoTeam'><strong>Member:</strong> " . $usernames  . "</p> <br>";
                 }
-                echo " <strong>To join the clan conatct tournament staff!</strong>";
+                echo " <p id='clanJoin'>To join the clan conatct tournament staff!</p> <a href='
+                https://discordapp.com/users/176736575302926336' class='discord' id='adminContactClan'>DAT BOI#9599</a> <br> <a href='
+                https://discordapp.com/users/246718596556783617' class='discord' id='adminContactClan'>Ali.M #3531</a>" ;
             } else {
                 echo "clan does not exists!";
             }
@@ -73,6 +78,9 @@ include 'check.php'; ?>
     }
 
     ?>
+
+    </div>
+
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
 

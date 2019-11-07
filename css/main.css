@@ -213,3 +213,32 @@
 #changePicBtn {
     margin-left: 37vh;
 }
+
+#clanSearchBox {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#clanJoin {
+    font-weight: 700;
+    color: greenyellow;
+    font-size: 1.2rem;
+}
+
+#lagNamnTag {
+    color: yellow;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+#spelarNamnNoTeam {
+    margin-bottom: -1rem;
+}
+
+#clanSearchBtn {
+    margin-top: 1rem;
+}
+
+#adminContactClan {
+    font-weight: 700;
+}
