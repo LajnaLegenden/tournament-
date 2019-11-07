@@ -1,9 +1,37 @@
 #log {
     float: right;
+    padding: auto;
+    width: 20%;
+    height: 100%;
+    margin-top: 2%;
+}
+
+.loginbtn {
+    padding: 3%;
+    margin-left: 1%;
+    border: 1px solid white;
+    border-radius: 25%;
+    background: #D18B30;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.1rem;
+}
+
+.loginbtn:hover {
+    background: #CCBF49;
+    color: #7A732C;
+    border-radius: 40%;
+    border: solid #7A732C 2px;
+    text-decoration: none;
+}
+
+a:active {
+    background: #F2E852;
 }
 
 header {
-    background: #fff;
+    background: #D4A839;
 }
 
 #logo {

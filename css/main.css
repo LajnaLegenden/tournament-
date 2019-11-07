@@ -1,3 +1,211 @@
-body {
-    background-color: rgb(76, 77, 78);
+.body {
+    background-color: #8C6A03;
+    height: 100vh;
+}
+
+.loging {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.login {
+    position: relative;
+    top: 50%;
+}
+
+.signin {
+    padding: 12px;
+    border-radius: 4px;
+    display: table;
+    margin: auto;
+    /*box-sizing: border-box;*/
+}
+
+.delete {
+    background: #DB2F1F;
+    color: #Ffff;
+    padding: 12px;
+    border-radius: 4px #FF1100;
+    display: table;
+    margin: auto;
+}
+
+
+/*.logout {
+    position: absolute;
+    display: table;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 27%;
+    width: 100%;
+}
+*/
+
+.Btn {
+    background: #BF9663;
+    color: #FFD67F;
+    border: #FFD67F;
+    box-shadow: 1px 1px grey;
+}
+
+.Btn:hover {
+    background: #FFD67F;
+    color: #BF9663;
+    border: #BF9663;
+    box-shadow: 3px 3px grey;
+}
+
+.signin:hover {
+    box-shadow: 3px 3px grey;
+}
+
+#conto-select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: table;
+    margin: auto;
+    margin-top: 4%;
+}
+
+.laglogo {
+    float: left;
+    justify-content: center;
+}
+
+.lagspelare {
+    flex: auto;
+    justify-content: center;
+}
+
+.lagstatistic {
+    justify-content: center;
+    flex: right;
+}
+
+#profilPicDiv {
+    width: 50%;
+    height: 500px;
+}
+
+#profilDescription {
+    width: 50%;
+    height: 500px;
+    float: right;
+    margin-top: -500px;
+}
+
+
+/*#picChooser {
+    margin: auto;
+}*/
+
+#welcomeP {
+    font-weight: 100;
+    font-size: 3.5rem;
+}
+
+#indexTextDiv {
+    text-align: center;
+    margin-top: 20rem;
+}
+
+#ldpDescription {
+    font-weight: 100;
+    font-size: 1.5rem;
+}
+
+#divDescription {
+    text-align: center;
+}
+
+.info {
+    float: right;
+    align-content: center;
+    padding: 10%;
+    font-size: 25px;
+}
+
+.userimg {
+    max-height: 40vh;
+    max-width: 50vh;
+    margin-left: 10%;
+}
+
+#spelarNamn {
+    font-size: 1.5rem;
+    margin-bottom: -0.7rem;
+}
+
+#error {
+    background-color: #d60000;
+}
+
+#errorText {
+    font-size: 7rem;
+    font-weight: 500;
+    text-shadow: 5px 5px white;
+}
+
+#aids {
+    text-align: center;
+    margin-top: 40vh;
+}
+
+#errorIndex {
+    background-color: #008719;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+#boxErrorIndex {
+    width: 100%;
+    text-align: center;
+}
+
+.editUser {
+    margin-bottom: 0rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 0rem;
+}
+
+.editpro {
+    float: center;
+    display: table;
+    margin: auto;
+}
+
+#spelareLag {
+    text-align: center;
+}
+
+#lagNamn {
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+#matchRegister {
+    text-align: center;
+}
+
+#winnerBtn {
+    margin-bottom: 0.5rem;
+}
+
+#matchBtn {
+    background: #D18B30;
+    border: none;
+    border-radius: 25%;
+    padding: 0.5rem;
+}
+
+#matchBtn:hover {
+    background: #CCBF49;
+    color: #7A732C;
+    text-decoration: none;
+    border-radius: 25%;
 }

@@ -1,3 +1,6 @@
+<?php include 'db.php';
+include 'check.php';
+include 'clancheck.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,8 +12,9 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Signup</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/solid.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/fontawesome.css">
+    <title>Lag</title>
 </head>
 
 <body class="body">
@@ -18,70 +22,68 @@
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a class="loginbtn" href="login.php">Login</a>
-                <a class="loginbtn" href="signup.php">Sign Up</a>
+                <a class="loginbtn" href="Profil.php">
+                    <?php
+                    echo $_SESSION['login_user'];
+                    ?></a>
+                <a class="loginbtn" href="tournament.php">Tournament</a>
             </div>
+
         </nav>
     </header>
-
-    <div class="loging">
-        <form method="POST" class="login">
-            <h4>Firstname:</h4>
-            <input class="signin" type="name" name="firstname" placeholder="First name...">
-            <h4>Lastname:</h4>
-            <input class="signin" type="name" name="efternamn" placeholder="Last name...">
-            <h4>Username:</h4>
-            <input class="signin" type="name" name="username" placeholder="Username...">
-            <h4>Email:</h4>
-            <input class="signin" type="email" name="email" placeholder="Email...">
-            <h4>Password:</h4>
-            <input class="signin" type="password" name="password" placeholder="Password...">
-            <h4>confirmpassword:</h4>
-            <input class="signin" type="password" name="confirmpassword" placeholder="Confirm password...">
-
-            <input class="signin Btn" type="submit" value="signup" id="Signup">
-        </form>
+    <div class="laglogo">
+        <img src="" alt="">
     </div>
+    <h1 class="lagnamn"></h1>
+    <div class="lagstatistic"></div>
+
+<div id="spelareLag">
+
     <?php
+
+
+    /*echo "<div class='laglogo'>" . "<img src='' alt=''>" . "</div>";
+        echo "<h1 class='lagnamn'>" . "</h1>";*/
+
     $link = mysqli_connect("localhost", "root", "", "tournament");
 
+    $username = $_SESSION['login_user'];
+
+    $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
+    $respans = mysqli_query($link, $result);
+    $row = mysqli_fetch_assoc($respans);
+    $userid = $row['ID'];
 
 
+    $result =  "SELECT * FROM `koppling` WHERE `spelarID` = '$userid'";
+    $respans = mysqli_query($link, $result);
+    $row = mysqli_fetch_assoc($respans);
+    $lagID = $row['lagID'];
 
-    if (empty($_POST['firstname']) || empty($_POST['efternamn']) || empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['confirmpassword'])) {
-        echo "Please write your information";
-    } else {
-        $firstname = $_POST['firstname'];
-        $lastname = $_POST['efternamn'];
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $confirm_password = $_POST['confirmpassword'];
+    $result =  "SELECT * FROM `lag` WHERE `ID` = '$lagID'";
+    $respans = mysqli_query($link, $result);
+    $row = mysqli_fetch_assoc($respans);
+    $lagnamn = $row['Namn'];
 
-        $sql = "SELECT * FROM `spelare` WHERE `username` = '$username'";
+    echo "<h1 id='lagNamn'> Team: $lagnamn [" . $row['Tag'] . "]  </h1>";
 
-
-        $result = mysqli_query($link, $sql);
-
-
-        if (mysqli_num_rows($result) == true) {
-            echo "username is already taken";
-            exit;
-        } else if ($password != $confirm_password) {
-            echo "Password did not match";
-            exit;
-        } else $sql = "INSERT INTO spelare (firstname, lastname, username, email, pass) VALUES ('$firstname', '$lastname', '$username', '$email', '$password') ";
-
-        if (mysqli_query($link, $sql)) {
-            echo "<br>Info added";
-            header("location: login.php");
-        }
+    $result =  "SELECT * FROM `koppling` WHERE `lagID` = '$lagID'";
+    $respans = mysqli_query($link, $result);
+    $row = mysqli_fetch_assoc($respans);
+    foreach ($respans as $row) {
+        $spelarID = $row['spelarID'];
+        $result =  "SELECT * FROM `spelare` WHERE `ID` = '$spelarID'";
+        $respans = mysqli_query($link, $result);
+        $row = mysqli_fetch_assoc($respans);
+        $usernames = $row['username'];
+        echo "<strong class='spelarNamn'>Username:</strong> " . $usernames  . "<br>";
     }
 
+
     ?>
-
-
-
+    <form method="POST" id="delete" action="leave.php">
+        <input class="delete" type="submit" name="submit" value="Leave clan">
+    </form>
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
 
@@ -132,6 +134,7 @@
 
     </footer>
     <!-- Footer -->
+
     <script src="../js/header.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/footer.js"></script>
