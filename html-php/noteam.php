@@ -1,4 +1,4 @@
-<?php include 'db.php';
+<?php
 include 'check.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,11 +30,49 @@ include 'check.php'; ?>
 
         </nav>
     </header>
-    <div style="text-align: center; margin-top:20vh;">
-        <p id="erText" style="font-size: 5rem; font-weight: 500; text-shadow: 5px 5px white; margin-top:0%;">You are not in a clan! <br></p>
-        <p id="erText" style="font-size: 5rem; font-weight: 500; text-shadow: 5px 5px white;">Contact admin to join a clan...</p>
+    <div class="loging">
+        <form method="POST" class="login" action="noteam.php">
+            <h4>Search for an existing clan by name:</h4>
+            <input class="signin" type="name" name="clannamn" placeholder="Clanname...">
+            <input class="signin Btn" type="submit" name="submit" value="Search" id="loginBtn">
+        </form>
     </div>
+    <?php
 
+    $link = mysqli_connect("localhost", "root", "", "tournament");
+    $username = $_SESSION['login_user'];
+    if (isset($_POST['submit'])) {
+        if (!isset($_POST['clannamn']) || empty($_POST['clannamn'])) {
+            echo "<h1> Please write the clanname above! </h1>";
+        } else {
+            $lagnamn = $_POST['clannamn'];
+            $search = "SELECT * FROM `lag` WHERE `Namn` = '$lagnamn'";
+            $respans = mysqli_query($link, $search);
+            $row = mysqli_fetch_assoc($respans);
+            if (mysqli_num_rows($respans) == true) {
+                $lagnamn = $row['Namn'];
+                $lagID = $row['ID'];
+                echo "<h1 id='lagNamn'> Team: $lagnamn [" . $row['Tag'] . "]  </h1>";
+
+                $result =  "SELECT * FROM `koppling` WHERE `lagID` = '$lagID'";
+                $respans = mysqli_query($link, $result);
+                $row = mysqli_fetch_assoc($respans);
+                foreach ($respans as $row) {
+                    $spelarID = $row['spelarID'];
+                    $result =  "SELECT * FROM `spelare` WHERE `ID` = '$spelarID'";
+                    $respans = mysqli_query($link, $result);
+                    $row = mysqli_fetch_assoc($respans);
+                    $usernames = $row['username'];
+                    echo "<strong class='spelarNamn'>Member:</strong> " . $usernames  . "<br>";
+                }
+                echo " <strong>To join the clan conatct tournament staff!</strong>";
+            } else {
+                echo "clan does not exists!";
+            }
+        }
+    }
+
+    ?>
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
 
