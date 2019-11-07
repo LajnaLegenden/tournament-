@@ -1,6 +1,5 @@
-<?php include 'db.php';
-include 'check.php';
-include 'matchregister.php'; ?>
+<?php
+include 'check.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +11,7 @@ include 'matchregister.php'; ?>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Tournament</title>
+    <title>Profil</title>
 </head>
 
 <body class="body">
@@ -24,24 +23,56 @@ include 'matchregister.php'; ?>
                     <?php
                     echo $_SESSION['login_user'];
                     ?></a>
+                <a class="loginbtn" href="tournament.php">Tournament</a>
                 <a class="loginbtn" href="lag.php">Clan</a>
             </div>
+
         </nav>
     </header>
-    <form  method="POST" class="register" action="matchregister.php">
-        <h4>Home team:</h4>
-        <input type="name" name="team1" placeholder="Home team...">
-        <h4>Away team:</h4>
-        <input type="name" name="team2" placeholder="Away team...">
-        <h4>Who won:</h4>
-        <input type="name" name="result" placeholder="Winner....">
-        <input type="submit" name="submit" value="Submit">
-    </form>
+    <!---<form action="upload.php" method="post" enctype="multipart/form-data">
+        <h4> image to upload:</h4>
+        <input type="file" name="image"/>
+        <input type="submit" name="submit" value="UPLOAD"/>
+    </form>-->
+
+
+
+
     <?php
+    // skapa ett handle till databasen genom att skapa en anslutning
     $link = mysqli_connect("localhost", "root", "", "tournament");
-    
+    if ($link === false) {
+        echo "Something is wrong...";
+        header('location: error.html');
+        exit();
+    }
+
+
+
+    $username = $_SESSION['login_user'];
+
+    $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
+    $respans = mysqli_query($link, $result);
+    $row = mysqli_fetch_assoc($respans);
+
     ?>
-   
+    <form method="POST" class="editpro" action="editcode.php">
+        <p class="editUser">Firstname</p>
+        <input class="signin" type="text" name="firstName" placeholder="Firstname"> <br>
+        <p class="editUser">Lastname</p>
+        <input class="signin" type="text" name="lastname" placeholder="Lastname"> <br>
+        <p class="editUser">Username</p>
+        <?php echo "<input type='text' class='signin' value=" . $row['username'] . " </input> <br>"; ?>
+        <p class="editUser">Email</p>
+        <input class="signin" type="text" name="email" placeholder="Email">
+        <input class="signin Btn" type="submit" value="submit" name="submit" id="Save edit">
+    </form>
+
+    <form method="POST" id="delete" action="delete.php">
+        <input class="delete " type="submit" name="submit" value="Delete Acount!">
+    </form>
+
+
 
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
@@ -62,7 +93,6 @@ include 'matchregister.php'; ?>
                     <p>Mohammed Ali Al-Hilo -
                         <a href="
                     https://discordapp.com/users/246718596556783617" class="discord"> Ali.M #3531</a></p>
-
                 </div>
                 <!-- Grid column -->
 

@@ -23,6 +23,7 @@
             header('location: profil.php');
         } else {
             echo "Your Login Name or Password is invalid";
+            header('location: error.html');
         }
     }
     //}

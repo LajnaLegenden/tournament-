@@ -23,6 +23,15 @@
     /*box-sizing: border-box;*/
 }
 
+.delete {
+    background: #DB2F1F;
+    color: #Ffff;
+    padding: 12px;
+    border-radius: 4px #FF1100;
+    display: table;
+    margin: auto;
+}
+
 
 /*.logout {
     position: absolute;
@@ -100,7 +109,7 @@
 
 #indexTextDiv {
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 20rem;
 }
 
 #ldpDescription {
@@ -133,13 +142,41 @@
     text-align: center;
 }
 
-.error {
+#error {
+    background-color: #d60000;
+}
+
+#errorText {
     font-size: 7rem;
     font-weight: 500;
-    text-shadow: 5px 5px grey;
+    text-shadow: 5px 5px white;
 }
 
 #aids {
     text-align: center;
     margin-top: 40vh;
+}
+
+#errorIndex {
+    background-color: #008719;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+#boxErrorIndex {
+    width: 100%;
+    text-align: center;
+}
+
+.editUser {
+    margin-bottom: 0rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 0rem;
+}
+
+.editpro {
+    float: center;
+    display: table;
+    margin: auto;
 }

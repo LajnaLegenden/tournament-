@@ -25,7 +25,7 @@ include 'check.php'; ?>
                     <?php
                     echo $_SESSION['login_user'];
                     ?></a>
-                <a class="loginbtn" href="">Tournament</a>
+                <a class="loginbtn" href="tournament.php">Tournament</a>
             </div>
 
         </nav>
