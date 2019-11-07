@@ -11,7 +11,9 @@ include 'check.php'; ?>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Profil</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/solid.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/fontawesome.css">
+    <title>Lag</title>
 </head>
 
 <body class="body">
@@ -19,71 +21,19 @@ include 'check.php'; ?>
         <nav class="navbar">
             <img src="../imgs/logo.png" alt="logo" id="logo">
             <div id="log">
-                <a class="loginbtn" href="out.php">Logout</a>
+                <a class="loginbtn" href="Profil.php">
+                    <?php
+                    echo $_SESSION['login_user'];
+                    ?></a>
                 <a class="loginbtn" href="tournament.php">Tournament</a>
-                <a class="loginbtn" href="lag.php">Clan</a>
             </div>
 
         </nav>
     </header>
-    <!---<form action="upload.php" method="post" enctype="multipart/form-data">
-        <h4> image to upload:</h4>
-        <input type="file" name="image"/>
-        <input type="submit" name="submit" value="UPLOAD"/>
-    </form>-->
-
-    <?php
-    // skapa ett handle till databasen genom att skapa en anslutning
-    $link = mysqli_connect("localhost", "root", "", "tournament");
-    if ($link === false) {
-        echo "Something is wrong...";
-        header('location: error.html');
-        exit();
-    }
-
-
-
-    $username = $_SESSION['login_user'];
-
-    $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
-    $respans = mysqli_query($link, $result);
-    $row = mysqli_fetch_assoc($respans);
-    $userid = $row['ID'];
- 
-    $res =  "SELECT * FROM `koppling` WHERE `spelarID` = '$userid'";
-    $resp = mysqli_query($link, $res);
-    $ro = mysqli_fetch_assoc($resp);
-    $lagID = $ro['lagID'];
-
-    $re =  "SELECT * FROM `lag` WHERE `ID` = '$lagID'";
-    $respa = mysqli_query($link, $re);
-    $r = mysqli_fetch_assoc($respa);
-    $lagnamn = $r['Tag'];
-   echo "<div class='info'>
-            <tr>
-                <td class='infotable'>
-            	    <strong>First Name:</strong> " . $row['firstname']  ." [". $lagnamn."] <br>
-            	    <strong>Last Name:</strong> " . $row['lastname'] . "<br>
-            	    <strong>Username:</strong> " . $row['username'] . "<br>
-            	    <strong>E-mail:</strong> " . $row['email'] . "<br>
-                </td>
-            </tr>
-         </div>";
-    if (isset($row['image'])) {
-        echo '<img class="userimg" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '"/>';
-    }
-
-
-
-    ?>
-
-
-
-    <form method="POST" class="register" action="edit.php">
-        <input class="signin Btn" type="submit" name="submit" value="edit profile">
-    </form>
-
-
+    <div style="text-align: center; margin-top:20vh;">
+        <p id="erText" style="font-size: 5rem; font-weight: 500; text-shadow: 5px 5px white; margin-top:0%;">You are not in a clan! <br></p>
+        <p id="erText" style="font-size: 5rem; font-weight: 500; text-shadow: 5px 5px white;">Contact admin to join a clan...</p>
+    </div>
 
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">
@@ -100,10 +50,10 @@ include 'check.php'; ?>
                     <!-- Content -->
                     <h5 class="text-uppercase font-weight-bold">admininfo</h5>
                     <p>Oliver Jam - <a href="
-                        https://discordapp.com/users/176736575302926336" class="discord">DAT BOI#9599</a></p>
+                            https://discordapp.com/users/176736575302926336" class="discord">DAT BOI#9599</a></p>
                     <p>Mohammed Ali Al-Hilo -
                         <a href="
-                    https://discordapp.com/users/246718596556783617" class="discord"> Ali.M #3531</a></p>
+                        https://discordapp.com/users/246718596556783617" class="discord"> Ali.M #3531</a></p>
 
                 </div>
                 <!-- Grid column -->
