@@ -24,20 +24,20 @@ include 'matchregister.php'; ?>
                     <?php
                     echo $_SESSION['login_user'];
                     ?></a>
-                <a class="loginbtn" href="lag.php">Clan</a>
+                <a class="loginbtn" href="lag.php">Team</a>
             </div>
         </nav>
     </header>
 
 <div id="matchRegister">
 
-    <form  method="POST" class="register" action="matchregister.php">
-        <h4>Home team:</h4>
-        <input type="name" name="team1" placeholder="Home team...">
-        <h4>Away team:</h4>
-        <input type="name" name="team2" placeholder="Away team...">
-        <h4>Who won:</h4>
-        <input id="winnerBtn" type="name" name="result" placeholder="Winner...."> <br>
+    <form id="tournamentMatch" method="POST" class="register" action="matchregister.php">
+        <h4 id="tournamentTeams">Home team:</h4>
+        <input id="tournamentInput" type="name" name="team1" placeholder="Home team...">
+        <h4 id="tournamentTeams">Away team:</h4>
+        <input id="tournamentInput" type="name" name="team2" placeholder="Away team...">
+        <h4 id="tournamentTeams">Who won:</h4>
+        <input id="tournamentInput" id="winnerBtn" type="name" name="result" placeholder="Winner...."> <br>
         <input id="matchBtn" type="submit" name="submit" value="Submit">
     </form>
 

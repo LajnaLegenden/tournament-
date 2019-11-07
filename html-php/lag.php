@@ -76,13 +76,13 @@ include 'clancheck.php'; ?>
         $respans = mysqli_query($link, $result);
         $row = mysqli_fetch_assoc($respans);
         $usernames = $row['username'];
-        echo "<strong class='spelarNamn'>Username:</strong> " . $usernames  . "<br>";
+        echo "<p class='spelarNamn'><strong>Members:</strong> " . $usernames  . "</p><br>";
     }
 
 
     ?>
     <form method="POST" id="delete" action="leave.php">
-        <input class="delete" type="submit" name="submit" value="Leave clan">
+        <input class="delete" id="leaveClan" type="submit" name="submit" value="Leave team">
     </form>
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">

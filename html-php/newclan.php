@@ -25,7 +25,7 @@ include 'check.php'; ?>
                     echo $_SESSION['login_user'];
                     ?></a>
                 <a class="loginbtn" href="tournament.php">Tournament</a>
-                <a class="loginbtn" href="lag.php">See clan</a>
+                <a class="loginbtn" href="lag.php">See Team</a>
             </div>
         </nav>
     </header>
@@ -33,9 +33,9 @@ include 'check.php'; ?>
     <div class="loging">
         <form method="POST" class="login" action="newclan.php" >
             <h4>Clan Name:</h4>
-            <input class="signin" type="name" name="Clanname" placeholder="Clan name...">
+            <input class="signin" id="createClanInput" type="name" name="Clanname" placeholder="Clan name...">
             <h4>Clan tag:</h4>
-            <input class="signin" type="name" name="Clantag" placeholder="Clan tag...">
+            <input class="signin" id="createClanInput" type="name" name="Clantag" placeholder="Clan tag...">
 
             <input class="signin Btn" type="submit" value="submit" id="Signup" name="submit">
         </form>

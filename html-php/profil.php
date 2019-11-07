@@ -21,7 +21,7 @@ include 'check.php'; ?>
             <div id="log">
                 <a class="loginbtn" href="out.php">Logout</a>
                 <a class="loginbtn" href="tournament.php">Tournament</a>
-                <a class="loginbtn" href="lag.php">Clan</a>
+                <a class="loginbtn" href="lag.php">Team</a>
             </div>
 
         </nav>
@@ -32,7 +32,7 @@ include 'check.php'; ?>
         <input type="submit" name="submit" value="UPLOAD"/>
     </form>-->
 
-
+    <div id="profileBox">
 
     <?php
     // skapa ett handle till databasen genom att skapa en anslutning
@@ -74,16 +74,16 @@ include 'check.php'; ?>
 
     ?>
 
-<div id="imgBox">
+
+
 
     <?php
 
-    if (isset($row['image'])) {
+    /*if (isset($row['image'])) {
         echo '<img class="userimg" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '"/>';
-    }
+    }*/
 
     ?>
-
     <form method="POST" class="register" action="edit.php">
         <input class="signin Btn" id="changePicBtn" type="submit" name="submit" value="Edit Profile">
     </form>

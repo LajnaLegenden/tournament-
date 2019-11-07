@@ -26,14 +26,14 @@ include 'check.php'; ?>
                     echo $_SESSION['login_user'];
                     ?></a>
                 <a class="loginbtn" href="tournament.php">Tournament</a>
-                <a class="loginbtn" href="newclan.php">Create clan</a>
+                <a class="loginbtn" href="newclan.php">Create Team</a>
             </div>
 
         </nav>
     </header>
     <div class="loging">
         <form method="POST" class="login" action="noteam.php">
-            <h4>Search for an existing clan by name:</h4>
+            <h4>Search for an existing Team by name:</h4>
             <input class="signin" type="name" name="clannamn" placeholder="Clanname...">
             <input class="signin Btn" id="clanSearchBtn" type="submit" name="submit" value="Search" id="loginBtn">
         </form>
