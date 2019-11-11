@@ -1,10 +1,7 @@
 <?php
 $link = mysqli_connect("localhost", "root", "", "tournament");
 
-/*if (!isset($_SESSION["login_user"]) ) {
-        header("location: login.php");
-        exit;
-    } else {*/
+
 if (isset($_POST['submit'])) {
 
 

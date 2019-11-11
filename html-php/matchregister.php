@@ -3,8 +3,9 @@ $link = mysqli_connect("localhost", "root", "", "tournament");
 if (isset($_POST['submit'])) {
     $firstlag = $_POST['team1'];
     $secondlag = $_POST['team2'];
-    $winnerlag = $_POST['result'];
-    if (!isset($firstlag) || !isset($secondlag) || !isset($winnerlag) || empty($firstlag) || empty($secondlag) || empty($winnerlag) || $secondlag == $firstlag) {
+    $firstlagscore = $_POST['firstresult'];
+    $secondlagscore = $_POST['scondresult'];
+    if (!isset($firstlag) || !isset($secondlag)   || empty($firstlag) || empty($secondlag) || empty($firstlagscore)  || empty($secondlagscore)|| $secondlag == $firstlag) {
         header('location: error.html');
         exit;
     }
@@ -18,13 +19,9 @@ if (isset($_POST['submit'])) {
     $row = mysqli_fetch_assoc($respans);
     $secondlagID = $row['ID'];
     //echo $secondlagID;
-    $wlag = "SELECT * FROM `lag` WHERE `Namn` = '$winnerlag'";
-    $respans = mysqli_query($link, $wlag);
-    $row = mysqli_fetch_assoc($respans);
-    $winnerlagID = $row['ID'];
-    //echo $winnerlagID;
+    
 
-    $sql = "INSERT INTO `match` (`firstlagID`, `secondlagID`, `result`) VALUES ('$firstlagID', '$secondlagID', '$winnerlagID')";
+    $sql = "INSERT INTO `match` (`firstlagID`, `secondlagID`, `firstlagscore`, `secondlagscore`) VALUES ('$firstlagID', '$secondlagID', '$firstlagscore', '$secondlagscore' )";
     mysqli_query($link, $sql);
 
     header('location: tournament.php');

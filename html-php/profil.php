@@ -60,11 +60,11 @@ include 'check.php'; ?>
         $re =  "SELECT * FROM `lag` WHERE `ID` = '$lagID'";
         $respa = mysqli_query($link, $re);
         $r = mysqli_fetch_assoc($respa);
-        $lagnamn = $r['Tag'];
+        $lagtag = $r['Tag'];
         echo "<div class='info'>
             <tr>
                 <td class='infotable'>
-            	    <strong>First Name:</strong> " . $row['firstname']  . " [" . $lagnamn . "] <br>
+            	    <strong>First Name:</strong> " . $row['firstname']  . " [ " . $lagtag . " ] <br>
             	    <strong>Last Name:</strong> " . $row['lastname'] . "<br>
             	    <strong>Username:</strong> " . $row['username'] . "<br>
             	    <strong>E-mail:</strong> " . $row['email'] . "<br>

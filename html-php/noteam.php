@@ -69,7 +69,7 @@ include 'check.php'; ?>
                         $usernames = $row['username'];
                         $names = $row['firstname'] . " " . $row['lastname'];
 
-                        echo "<p class='spelarNamn'><strong>Members:</strong> " . $names . "[" . $usernames . "]</p><br>";
+                        echo "<p class='spelarNamn'><strong>Members:</strong> " . $names . "[ " . $usernames . " ]</p><br>";
                     }
                     echo " <p id='clanJoin'>To join the clan conatct tournament staff!</p> <a href='
                 https://discordapp.com/users/176736575302926336' class='discord' id='adminContactClan'>DAT BOI#9599</a> <br> <a href='

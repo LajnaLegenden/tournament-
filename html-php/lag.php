@@ -66,7 +66,7 @@ include 'clancheck.php'; ?>
         $row = mysqli_fetch_assoc($respans);
         $lagnamn = $row['Namn'];
 
-        echo "<h1 id='lagNamn'> Team: $lagnamn [" . $row['Tag'] . "]  </h1>";
+        echo "<h1 id='lagNamn'> Team: $lagnamn [ " . $row['Tag'] . " ]  </h1>";
 
         $result =  "SELECT * FROM `koppling` WHERE `lagID` = '$lagID'";
         $respans = mysqli_query($link, $result);
@@ -79,7 +79,7 @@ include 'clancheck.php'; ?>
             $usernames = $row['username'];
             $names = $row['firstname'] . " " . $row['lastname'];
 
-            echo "<p class='spelarNamn'><strong>Members:</strong> " . $names . "[" . $usernames . "]</p><br>";
+            echo "<p class='spelarNamn'><strong>Members:</strong> " . $names . "[ " . $usernames . " ]</p><br>";
         }
 
 

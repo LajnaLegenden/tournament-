@@ -1,4 +1,4 @@
-<?php include 'db.php';
+<?php 
 include 'check.php';
 include 'matchregister.php'; ?>
 <!DOCTYPE html>
@@ -36,8 +36,10 @@ include 'matchregister.php'; ?>
             <input id="tournamentInput" type="name" name="team1" placeholder="Home team...">
             <h4 id="tournamentTeams">Away team:</h4>
             <input id="tournamentInput" type="name" name="team2" placeholder="Away team...">
-            <h4 id="tournamentTeams">Who won:</h4>
-            <input id="tournamentInput" id="winnerBtn" type="name" name="result" placeholder="Winner...."> <br>
+            <h4 id="tournamentTeams">Home team score:</h4>
+            <input id="tournamentInput" id="winnerBtn" type="name" name="firstresult" placeholder="Home team score..."> <br>
+            <h4 id="tournamentTeams">Away team score:</h4>
+            <input id="tournamentInput" id="winnerBtn" type="name" name="scondresult" placeholder="Away team score..."> <br>
             <input id="matchBtn" type="submit" name="submit" value="Submit">
         </form>
 
