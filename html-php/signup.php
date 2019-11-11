@@ -71,7 +71,7 @@
             echo "Password did not match";
             exit;
         } else {
-            $crypterad = base64_encode($password);
+            $crypterad = md5($password);
             $sql = "INSERT INTO spelare (firstname, lastname, username, email, pass) VALUES ('$firstname', '$lastname', '$username', '$email', '$crypterad') ";
 
             if (mysqli_query($link, $sql)) {

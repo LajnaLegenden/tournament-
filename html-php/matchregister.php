@@ -4,7 +4,7 @@ if (isset($_POST['submit'])) {
     $firstlag = $_POST['team1'];
     $secondlag = $_POST['team2'];
     $winnerlag = $_POST['result'];
-    if(!isset($firstlag) || !isset($secondlag) || !isset($winnerlag) || empty($firstlag)|| empty($secondlag) || empty($winnerlag) || $secondlag == $firstlag){
+    if (!isset($firstlag) || !isset($secondlag) || !isset($winnerlag) || empty($firstlag) || empty($secondlag) || empty($winnerlag) || $secondlag == $firstlag) {
         header('location: error.html');
         exit;
     }

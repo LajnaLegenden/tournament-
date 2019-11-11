@@ -29,24 +29,24 @@ include 'matchregister.php'; ?>
         </nav>
     </header>
 
-<div id="matchRegister">
+    <div id="matchRegister">
 
-    <form id="tournamentMatch" method="POST" class="register" action="matchregister.php">
-        <h4 id="tournamentTeams">Home team:</h4>
-        <input id="tournamentInput" type="name" name="team1" placeholder="Home team...">
-        <h4 id="tournamentTeams">Away team:</h4>
-        <input id="tournamentInput" type="name" name="team2" placeholder="Away team...">
-        <h4 id="tournamentTeams">Who won:</h4>
-        <input id="tournamentInput" id="winnerBtn" type="name" name="result" placeholder="Winner...."> <br>
-        <input id="matchBtn" type="submit" name="submit" value="Submit">
-    </form>
+        <form id="tournamentMatch" method="POST" class="register" action="matchregister.php">
+            <h4 id="tournamentTeams">Home team:</h4>
+            <input id="tournamentInput" type="name" name="team1" placeholder="Home team...">
+            <h4 id="tournamentTeams">Away team:</h4>
+            <input id="tournamentInput" type="name" name="team2" placeholder="Away team...">
+            <h4 id="tournamentTeams">Who won:</h4>
+            <input id="tournamentInput" id="winnerBtn" type="name" name="result" placeholder="Winner...."> <br>
+            <input id="matchBtn" type="submit" name="submit" value="Submit">
+        </form>
 
-</div>
+    </div>
     <?php
     $link = mysqli_connect("localhost", "root", "", "tournament");
-    
+
     ?>
-   
+
 
     <!-- Footer -->
     <footer class="page-footer font-small teal pt-4">

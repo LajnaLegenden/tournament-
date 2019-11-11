@@ -31,13 +31,13 @@ include 'check.php'; ?>
     </header>
 
     <div class="loging">
-        <form method="POST" class="login" action="newclan.php" >
+        <form method="POST" class="login" action="newclan.php">
             <h4>Clan Name:</h4>
             <input class="signin" id="createClanInput" type="name" name="Clanname" placeholder="Clan name...">
             <h4>Clan tag:</h4>
             <input class="signin" id="createClanInput" type="name" name="Clantag" placeholder="Clan tag...">
 
-            <input class="signin Btn" type="submit" value="submit" id="Signup" name="submit">
+            <input class="signin Btn" type="submit" value="submit" name="submit">
         </form>
     </div>
     <?php
@@ -46,7 +46,7 @@ include 'check.php'; ?>
 
     if (isset($_POST['submit'])) {
 
-        if (empty($_POST['Clanname']) || empty($_POST['Clantag']) ) {
+        if (empty($_POST['Clanname']) || empty($_POST['Clantag'])) {
             echo "Please write your information";
         } else {
             $clannamn = $_POST['Clanname'];
@@ -59,13 +59,12 @@ include 'check.php'; ?>
             $r = mysqli_query($link, $s);
 
             if (mysqli_num_rows($result) || mysqli_num_rows($r)) {
-                echo "Clan name and Tag are already taken";
+                echo "Clan name and/or tag are already taken";
                 exit;
             } else {
                 $sl = "INSERT INTO `lag` (Namn, Tag) VALUES ('$clannamn', '$clantag')";
-                $rs = mysqli_query($link, $sl);
 
-                if (mysqli_query($link,$sl)) {
+                if (mysqli_query($link, $sl)) {
                     $username = $_SESSION['login_user'];
                     $result =  "SELECT * FROM `spelare` WHERE `username` = '$username'";
                     $respans = mysqli_query($link, $result);
@@ -78,7 +77,7 @@ include 'check.php'; ?>
                     $lagID = $row['ID'];
 
                     $s = "INSERT INTO `koppling` (`lagID`, `spelarID`) VALUES ('$lagID', '$userid')";
-                    mysqli_query($link,$s);
+                    mysqli_query($link, $s);
                     header("location: lag.php");
                     exit;
                 }
