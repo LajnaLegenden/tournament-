@@ -79,9 +79,7 @@ include 'check.php'; ?>
 
         <?php
 
-        /*if (isset($row['image'])) {
-        echo '<img class="userimg" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '"/>';
-    }*/
+      
 
         ?>
         <form method="POST" class="register" action="edit.php">
