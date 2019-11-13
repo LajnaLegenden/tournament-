@@ -1,5 +1,5 @@
 <?php
-include 'check.php'; ?>
+include 'check.php'; include 'checkteam.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +25,7 @@ include 'check.php'; ?>
                     echo $_SESSION['login_user'];
                     ?></a>
                 <a class="loginbtn" href="tournament.php">Tournament</a>
-                <a class="loginbtn" href="lag.php">See Team</a>
+                <!---<a class="loginbtn" href="lag.php">See Team</a>-->
             </div>
         </nav>
     </header>
